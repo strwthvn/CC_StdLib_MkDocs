@@ -526,6 +526,79 @@ a:active {
   display: none;
 }
 
+/* Smooth page transitions for instant navigation */
+.md-content {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading indicator for instant navigation */
+.md-header__button.md-icon[for="__drawer"] {
+  transition: opacity 0.2s;
+}
+
+/* Prevent flash of unstyled content */
+body {
+  transition: opacity 0.15s ease-in-out;
+}
+
+/* Smooth transition for content changes */
+.md-typeset {
+  animation: contentFadeIn 0.25s ease-out;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Loading progress bar */
+[data-md-color-switching] {
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+/* Style the progress indicator */
+.md-progress {
+  background-color: var(--github-dark-accent-blue);
+  height: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: width 0.2s ease-out;
+}
+
+/* Progress bar animation */
+@keyframes progressBar {
+  0% {
+    width: 0%;
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title {

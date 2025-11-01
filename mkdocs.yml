@@ -23,6 +23,8 @@ theme:
     - navigation.path
     - navigation.footer
     - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.tracking
     - search.highlight
     - search.share
