@@ -92,4 +92,4 @@ plugins:
 
 # Custom CSS
 extra_css:
-  - stylesheets/github-dark.css
+  - ../src/stylesheets/github-dark.css
