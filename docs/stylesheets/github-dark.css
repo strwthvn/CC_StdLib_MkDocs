@@ -1,0 +1,437 @@
+/* GitHub Dark Theme for MkDocs Material */
+
+:root {
+  /* GitHub Dark color palette */
+  --github-dark-bg-primary: #0d1117;
+  --github-dark-bg-secondary: #161b22;
+  --github-dark-bg-tertiary: #21262d;
+  --github-dark-bg-canvas: #010409;
+  --github-dark-border-default: #30363d;
+  --github-dark-border-muted: #21262d;
+  --github-dark-text-primary: #e6edf3;
+  --github-dark-text-secondary: #7d8590;
+  --github-dark-text-tertiary: #656d76;
+  --github-dark-accent-blue: #58a6ff;
+  --github-dark-accent-green: #3fb950;
+  --github-dark-accent-orange: #ffa657;
+  --github-dark-accent-red: #f85149;
+  --github-dark-accent-purple: #bc8cff;
+  --github-dark-accent-pink: #f778ba;
+  --github-dark-code-bg: #0d1117;
+  --github-dark-code-border: #30363d;
+}
+
+/* Root background */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--github-dark-bg-secondary);
+  --md-default-fg-color: var(--github-dark-text-primary);
+  
+  /* Primary colors */
+  --md-primary-fg-color: var(--github-dark-bg-primary);
+  --md-primary-bg-color: var(--github-dark-text-primary);
+  
+  /* Accent colors */
+  --md-accent-fg-color: var(--github-dark-accent-blue);
+  --md-accent-bg-color: var(--github-dark-accent-blue);
+  
+  /* Typography */
+  --md-typeset-color: var(--github-dark-text-primary);
+  --md-typeset-a-color: var(--github-dark-accent-blue);
+  
+  /* Code */
+  --md-code-bg-color: var(--github-dark-code-bg);
+  --md-code-fg-color: var(--github-dark-text-primary);
+  
+  /* Footer */
+  --md-footer-bg-color: var(--github-dark-bg-secondary);
+  --md-footer-fg-color: var(--github-dark-text-secondary);
+}
+
+/* Main content area */
+.md-main {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+/* Header */
+.md-header {
+  background-color: var(--github-dark-bg-primary) !important;
+  border-bottom: 1px solid var(--github-dark-border-default);
+  box-shadow: none;
+}
+
+.md-header__title {
+  color: var(--github-dark-text-primary);
+}
+
+/* Navigation */
+.md-nav {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+.md-nav__title {
+  background-color: var(--github-dark-bg-primary);
+  color: var(--github-dark-text-primary);
+  border-bottom: 1px solid var(--github-dark-border-default);
+}
+
+.md-nav__item .md-nav__link {
+  color: var(--github-dark-text-secondary);
+  border-radius: 6px;
+  margin: 2px 0;
+}
+
+.md-nav__item .md-nav__link:hover {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-text-primary);
+}
+
+.md-nav__item .md-nav__link--active {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-accent-blue);
+  font-weight: 600;
+}
+
+/* Sidebar */
+.md-sidebar {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+.md-sidebar--secondary {
+  border-left: 1px solid var(--github-dark-border-default);
+}
+
+/* Content */
+.md-content {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+.md-content__inner {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+/* Typography */
+.md-typeset h1 {
+  color: var(--github-dark-text-primary);
+  border-bottom: 1px solid var(--github-dark-border-muted);
+  padding-bottom: 10px;
+}
+
+.md-typeset h2 {
+  color: var(--github-dark-text-primary);
+  border-bottom: 1px solid var(--github-dark-border-muted);
+  padding-bottom: 8px;
+}
+
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--github-dark-text-primary);
+}
+
+.md-typeset p {
+  color: var(--github-dark-text-primary);
+}
+
+.md-typeset a {
+  color: var(--github-dark-accent-blue);
+  text-decoration: none;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* Code blocks */
+.md-typeset code {
+  background-color: var(--github-dark-code-bg);
+  color: var(--github-dark-text-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85em;
+}
+
+.md-typeset pre {
+  background-color: var(--github-dark-code-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.md-typeset pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* Tables */
+.md-typeset table {
+  background-color: var(--github-dark-bg-secondary);
+  border: 1px solid var(--github-dark-border-default);
+  border-radius: 6px;
+}
+
+.md-typeset table th {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-text-primary);
+  border-bottom: 1px solid var(--github-dark-border-default);
+}
+
+.md-typeset table td {
+  border-bottom: 1px solid var(--github-dark-border-muted);
+  color: var(--github-dark-text-primary);
+}
+
+.md-typeset table tr:hover {
+  background-color: var(--github-dark-bg-tertiary);
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  background-color: var(--github-dark-bg-secondary);
+  border-left: 4px solid var(--github-dark-accent-blue);
+  color: var(--github-dark-text-primary);
+}
+
+/* Lists */
+.md-typeset ul li,
+.md-typeset ol li {
+  color: var(--github-dark-text-primary);
+}
+
+/* Horizontal rules */
+.md-typeset hr {
+  border-color: var(--github-dark-border-default);
+}
+
+/* Search */
+.md-search__form {
+  background-color: var(--github-dark-bg-tertiary);
+  border: 1px solid var(--github-dark-border-default);
+  border-radius: 6px;
+}
+
+.md-search__input {
+  background-color: transparent;
+  color: var(--github-dark-text-primary);
+}
+
+.md-search__input::placeholder {
+  color: var(--github-dark-text-tertiary);
+}
+
+/* Footer */
+.md-footer {
+  background-color: var(--github-dark-bg-primary);
+  border-top: 1px solid var(--github-dark-border-default);
+  color: var(--github-dark-text-secondary);
+}
+
+.md-footer-meta {
+  background-color: var(--github-dark-bg-secondary);
+}
+
+/* Tabs */
+.md-tabs {
+  background-color: var(--github-dark-bg-primary);
+  border-bottom: 1px solid var(--github-dark-border-default);
+}
+
+.md-tabs__item {
+  color: var(--github-dark-text-secondary);
+}
+
+.md-tabs__link {
+  color: var(--github-dark-text-secondary);
+}
+
+.md-tabs__link--active {
+  color: var(--github-dark-text-primary);
+  border-bottom: 2px solid var(--github-dark-accent-blue);
+}
+
+/* Buttons */
+.md-button {
+  background-color: var(--github-dark-accent-blue);
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+
+.md-button:hover {
+  background-color: #4493f8;
+}
+
+.md-button--primary {
+  background-color: var(--github-dark-accent-green);
+}
+
+.md-button--primary:hover {
+  background-color: #3fb950;
+}
+
+/* Admonitions */
+.md-typeset .admonition {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--github-dark-bg-secondary);
+  border-left: 4px solid var(--github-dark-accent-blue);
+}
+
+.md-typeset .admonition-title {
+  background-color: transparent;
+  border-bottom: none;
+  color: var(--github-dark-text-primary);
+  padding: 12px 16px 8px 16px;
+}
+
+/* Mermaid diagrams container */
+.diagram-container {
+  background: var(--github-dark-bg-secondary) !important;
+  border: 1px solid var(--github-dark-border-default) !important;
+  border-radius: 6px;
+}
+
+/* Mermaid diagram improvements */
+.mermaid {
+  background-color: var(--github-dark-bg-secondary) !important;
+}
+
+.mermaid svg {
+  background-color: transparent !important;
+}
+
+/* Content navigation (Next/Previous) */
+.md-content__button {
+  color: var(--github-dark-text-secondary);
+}
+
+.md-content__button:hover {
+  color: var(--github-dark-accent-blue);
+}
+
+/* TOC (Table of Contents) */
+.md-nav--secondary .md-nav__title {
+  background-color: var(--github-dark-bg-secondary);
+  color: var(--github-dark-text-primary);
+  border-bottom: 1px solid var(--github-dark-border-muted);
+  font-weight: 600;
+  padding: 12px 12px 8px 12px;
+  margin-bottom: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.md-nav--secondary .md-nav__list {
+  padding-top: 4px;
+}
+
+.md-nav--secondary .md-nav__item {
+  margin: 2px 0;
+}
+
+.md-nav--secondary .md-nav__link {
+  color: var(--github-dark-text-secondary);
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  margin: 1px 0;
+  border-radius: 4px;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-text-primary);
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--github-dark-accent-blue);
+  font-weight: 500;
+  background-color: rgba(88, 166, 255, 0.1);
+}
+
+/* Scroll bars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--github-dark-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--github-dark-text-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--github-dark-text-secondary);
+}
+
+/* Source code highlighting improvements */
+.highlight {
+  background-color: var(--github-dark-code-bg) !important;
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.highlight .linenos {
+  background-color: transparent;
+  color: var(--github-dark-text-tertiary);
+  border-right: none;
+  padding-right: 12px;
+  margin-right: 12px;
+  user-select: none;
+}
+
+/* Syntax highlighting colors for GitHub Dark */
+.highlight .c { color: #7c7c7c; font-style: italic; } /* Comment */
+.highlight .k { color: #ff7b72; } /* Keyword */
+.highlight .s { color: #a5c261; } /* String */
+.highlight .n { color: var(--github-dark-text-primary); } /* Name */
+.highlight .nf { color: #d2a8ff; } /* Name.Function */
+.highlight .nc { color: #ffa657; } /* Name.Class */
+.highlight .nb { color: #79c0ff; } /* Name.Builtin */
+.highlight .o { color: #ff7b72; } /* Operator */
+.highlight .m { color: #79c0ff; } /* Number */
+.highlight .mi { color: #79c0ff; } /* Number.Integer */
+.highlight .mf { color: #79c0ff; } /* Number.Float */
+.highlight .nt { color: #7ee787; } /* Name.Tag */
+.highlight .na { color: #79c0ff; } /* Name.Attribute */
+.highlight .nv { color: #ffa657; } /* Name.Variable */
+.highlight .bp { color: #79c0ff; } /* Name.Builtin.Pseudo */
+.highlight .kn { color: #ff7b72; } /* Keyword.Namespace */
+.highlight .kc { color: #79c0ff; } /* Keyword.Constant */
+.highlight .kd { color: #ff7b72; } /* Keyword.Declaration */
+.highlight .kt { color: #ffa657; } /* Keyword.Type */
+.highlight .cp { color: #7c7c7c; } /* Comment.Preproc */
+.highlight .se { color: #79c0ff; } /* String.Escape */
+.highlight .si { color: #a5c261; } /* String.Interpol */
+.highlight .sx { color: #a5c261; } /* String.Other */
+
+/* Pascal/Structured Text specific */
+.highlight .kr { color: #ff7b72; } /* Keyword.Reserved */
+.highlight .nn { color: #ffa657; } /* Name.Namespace */
+
+/* Hide footer copyright */
+.md-footer-meta__inner {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--github-dark-bg-primary);
+    color: var(--github-dark-text-primary);
+  }
+}
