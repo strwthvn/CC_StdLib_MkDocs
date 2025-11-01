@@ -1,4 +1,4 @@
-# Документация функционального блока FB_NumericChangeDetector
+# FB_NumericChangeDetector
 
 ## Обзор
 

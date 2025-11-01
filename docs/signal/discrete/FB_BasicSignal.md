@@ -1,4 +1,4 @@
-# Документация функционального блока FB_BasicSignal
+# FB_BasicSignal
 
 ## Обзор
 

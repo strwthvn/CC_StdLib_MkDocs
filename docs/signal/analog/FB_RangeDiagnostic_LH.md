@@ -1,4 +1,4 @@
-# Документация функционального блока FB_RangeDiagnostic_LH
+# FB_RangeDiagnostic_LH
 
 ## Обзор
 

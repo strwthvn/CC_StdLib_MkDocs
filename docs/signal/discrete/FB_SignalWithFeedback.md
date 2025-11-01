@@ -1,4 +1,4 @@
-# Документация функционального блока FB_SignalWithFeedback
+# FB_SignalWithFeedback
 
 ## Обзор
 

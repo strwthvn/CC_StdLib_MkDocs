@@ -1,4 +1,4 @@
-# Документация функционального блока FB_SignalWithRattling
+# FB_SignalWithRattling
 
 ## Обзор
 

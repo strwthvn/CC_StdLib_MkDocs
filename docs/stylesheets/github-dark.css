@@ -317,7 +317,7 @@
   color: var(--github-dark-accent-blue);
 }
 
-/* TOC (Table of Contents) */
+/* TOC (Table of Contents) - Right sidebar */
 .md-nav--secondary .md-nav__title {
   background-color: var(--github-dark-bg-secondary);
   color: var(--github-dark-text-primary);
@@ -355,6 +355,61 @@
   color: var(--github-dark-accent-blue);
   font-weight: 500;
   background-color: rgba(88, 166, 255, 0.1);
+}
+
+/* Primary navigation - Left sidebar */
+.md-sidebar--primary {
+  scrollbar-width: thin;
+  scrollbar-color: var(--github-dark-text-tertiary) var(--github-dark-bg-secondary);
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--github-dark-text-tertiary) var(--github-dark-bg-secondary);
+}
+
+.md-nav--primary > .md-nav__list {
+  padding: 4px 12px;
+}
+
+.md-nav--primary .md-nav__item {
+  margin: 2px 0;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  color: var(--github-dark-text-secondary);
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  margin: 2px 0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.md-nav--primary .md-nav__link {
+  padding: 4px 12px;
+  margin: 1px 0;
+  border-radius: 4px;
+}
+
+.md-nav--primary .md-nav__link:hover {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-text-primary);
+}
+
+.md-nav--primary .md-nav__link--active {
+  color: var(--github-dark-accent-blue);
+  font-weight: 500;
+  background-color: rgba(88, 166, 255, 0.1);
+}
+
+/* Nested navigation items in left sidebar */
+.md-nav--primary .md-nav .md-nav__list {
+  padding-left: 12px;
+}
+
+.md-nav--primary .md-nav .md-nav__item .md-nav__link {
+  font-size: 0.75rem;
+  padding: 3px 12px;
 }
 
 /* Scroll bars */

@@ -1,4 +1,4 @@
-# Документация функционального блока FB_MechanismWithFeedback
+# FB_MechanismWithFeedback
 
 ## Обзор
 

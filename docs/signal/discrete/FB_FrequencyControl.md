@@ -1,4 +1,4 @@
-# Документация функционального блока FB_FrequencyControl
+# FB_FrequencyControl
 
 ## Обзор
 

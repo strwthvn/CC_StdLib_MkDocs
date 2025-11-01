@@ -1,4 +1,4 @@
-# Документация функционального блока FB_SignalWithFeedbackTimer
+# FB_SignalWithFeedbackTimer
 
 ## Обзор
 

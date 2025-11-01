@@ -1,4 +1,4 @@
-# Документация функционального блока FB_BasicControl
+# FB_BasicControl
 
 ## Обзор
 

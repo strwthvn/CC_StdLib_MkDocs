@@ -1,4 +1,4 @@
-# Документация функционального блока FB_AbstractMechanism
+# FB_AbstractMechanism
 
 ## Обзор
 

@@ -1,4 +1,4 @@
-# Документация функционального блока FB_SignalWithTrigger
+# FB_SignalWithTrigger
 
 ## Обзор
 

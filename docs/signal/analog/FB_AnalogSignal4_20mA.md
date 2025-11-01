@@ -1,4 +1,4 @@
-# Документация функционального блока FB_AnalogSignal4_20mA
+# FB_AnalogSignal4_20mA
 
 ## Обзор
 

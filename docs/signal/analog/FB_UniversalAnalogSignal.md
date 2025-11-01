@@ -1,4 +1,4 @@
-# Документация функционального блока FB_UniversalAnalogSignal
+# FB_UniversalAnalogSignal
 
 ## Обзор
 
