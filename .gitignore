@@ -1,0 +1,21 @@
+# Build outputs
+build/
+dist/
+*.o
+*.lib
+*.dll
+*.exe
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp

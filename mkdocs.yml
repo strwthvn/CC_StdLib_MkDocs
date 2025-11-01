@@ -1,0 +1,83 @@
+site_name: CC_StdLib Documentation
+site_description: Документация библиотеки функциональных блоков IEC ST
+site_author: CC_StdLib Team
+
+# Repository
+repo_name: CC_StdLib
+repo_url: https://github.com/your-org/CC_StdLib
+
+# Theme
+theme:
+  name: material
+  language: ru
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+# Navigation
+nav:
+  - Главная: index.md
+  - Начало работы: getting-started.md
+  - Архитектура: diagram.md
+  - Коммуникация: Communication.md
+  - Сигналы:
+    - Дискретные сигналы:
+      - signal/discrete/FB_BasicSignal.md
+      - signal/discrete/FB_SignalWithFeedback.md
+      - signal/discrete/FB_SignalWithFeedbackTimer.md
+      - signal/discrete/FB_SignalWithRattling.md
+      - signal/discrete/FB_SignalWithTrigger.md
+      - signal/discrete/FB_FrequencyControl.md
+    - Аналоговые сигналы:
+      - signal/analog/FB_BasicAnalogSignal.md
+      - signal/analog/FB_AnalogSignal4_20mA.md
+      - signal/analog/FB_UniversalAnalogSignal.md
+      - signal/analog/FB_NumericChangeDetector.md
+      - signal/analog/FB_RangeDiagnostic_LH.md
+  - Механизмы:
+    - mechanism/FB_AbstractMechanism.md
+    - mechanism/FB_Mechanism.md
+    - mechanism/FB_MechanismWithFeedback.md
+  - Управление:
+    - control/FB_BasicControl.md
+    - control/FB_FrequencyControl.md
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - tables
+
+# Plugins
+plugins:
+  - search:
+      lang: ru
+  - mermaid2

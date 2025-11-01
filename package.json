@@ -1,0 +1,13 @@
+{
+  "name": "cc-stdlib-docs",
+  "version": "1.0.0",
+  "description": "CC_StdLib Documentation Site",
+  "scripts": {
+    "install-deps": "pip install -r requirements.txt",
+    "serve": "mkdocs serve",
+    "build": "mkdocs build",
+    "deploy": "mkdocs gh-deploy"
+  },
+  "keywords": ["documentation", "iec-st", "automation", "mkdocs"],
+  "author": "CC_StdLib Team"
+}
