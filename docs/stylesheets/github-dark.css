@@ -23,11 +23,11 @@
 
 /* Root background */
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color: var(--github-dark-bg-primary);
+  --md-default-bg-color: var(--github-dark-bg-secondary);
   --md-default-fg-color: var(--github-dark-text-primary);
   
   /* Primary colors */
-  --md-primary-fg-color: var(--github-dark-bg-secondary);
+  --md-primary-fg-color: var(--github-dark-bg-primary);
   --md-primary-bg-color: var(--github-dark-text-primary);
   
   /* Accent colors */
@@ -49,12 +49,12 @@
 
 /* Main content area */
 .md-main {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 /* Header */
 .md-header {
-  background-color: var(--github-dark-bg-secondary) !important;
+  background-color: var(--github-dark-bg-primary) !important;
   border-bottom: 1px solid var(--github-dark-border-default);
   box-shadow: none;
 }
@@ -65,11 +65,11 @@
 
 /* Navigation */
 .md-nav {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 .md-nav__title {
-  background-color: var(--github-dark-bg-secondary);
+  background-color: var(--github-dark-bg-primary);
   color: var(--github-dark-text-primary);
   border-bottom: 1px solid var(--github-dark-border-default);
 }
@@ -93,7 +93,7 @@
 
 /* Sidebar */
 .md-sidebar {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 .md-sidebar--secondary {
@@ -102,11 +102,11 @@
 
 /* Content */
 .md-content {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 .md-content__inner {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 /* Typography */
@@ -165,13 +165,13 @@
 
 /* Tables */
 .md-typeset table {
-  background-color: var(--github-dark-bg-primary);
+  background-color: var(--github-dark-bg-secondary);
   border: 1px solid var(--github-dark-border-default);
   border-radius: 6px;
 }
 
 .md-typeset table th {
-  background-color: var(--github-dark-bg-secondary);
+  background-color: var(--github-dark-bg-tertiary);
   color: var(--github-dark-text-primary);
   border-bottom: 1px solid var(--github-dark-border-default);
 }
@@ -205,7 +205,7 @@
 
 /* Search */
 .md-search__form {
-  background-color: var(--github-dark-bg-secondary);
+  background-color: var(--github-dark-bg-tertiary);
   border: 1px solid var(--github-dark-border-default);
   border-radius: 6px;
 }
@@ -221,18 +221,18 @@
 
 /* Footer */
 .md-footer {
-  background-color: var(--github-dark-bg-secondary);
+  background-color: var(--github-dark-bg-primary);
   border-top: 1px solid var(--github-dark-border-default);
   color: var(--github-dark-text-secondary);
 }
 
 .md-footer-meta {
-  background-color: var(--github-dark-bg-tertiary);
+  background-color: var(--github-dark-bg-secondary);
 }
 
 /* Tabs */
 .md-tabs {
-  background-color: var(--github-dark-bg-secondary);
+  background-color: var(--github-dark-bg-primary);
   border-bottom: 1px solid var(--github-dark-border-default);
 }
 
@@ -332,7 +332,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--github-dark-bg-primary);
+  background: var(--github-dark-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -360,7 +360,7 @@
 /* Responsive adjustments */
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title {
-    background-color: var(--github-dark-bg-secondary);
+    background-color: var(--github-dark-bg-primary);
     color: var(--github-dark-text-primary);
   }
 }
