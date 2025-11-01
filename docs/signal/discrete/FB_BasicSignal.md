@@ -81,3 +81,24 @@ END_VAR
 fbSignal(ixSignal := DI_EmergencyStop);
 xInvertedState := fbSignal.GetInvertedSignal(); // TRUE когда кнопка не нажата
 ```
+
+---
+
+## 🔗 Связанные разделы
+
+### Производные блоки
+- [🔄 FB_SignalWithTrigger](../discrete/FB_SignalWithTrigger.md) - Детекция фронтов сигналов
+- [📤 FB_SignalWithFeedback](../discrete/FB_SignalWithFeedback.md) - Контроль обратной связи
+- [🕒 FB_SignalWithFeedbackTimer](../discrete/FB_SignalWithFeedbackTimer.md) - Таймаут обратной связи
+- [🔧 FB_SignalWithRattling](../discrete/FB_SignalWithRattling.md) - Фильтрация дребезга
+
+### Аналоговые сигналы
+- [📊 FB_BasicAnalogSignal](../analog/FB_BasicAnalogSignal.md) - Базовый аналоговый сигнал
+- [🔌 FB_AnalogSignal4_20mA](../analog/FB_AnalogSignal4_20mA.md) - Токовая петля 4-20мА
+
+### Диаграммы
+- [🔄 Схема обработки сигналов](../../diagrams/signals-diagram.md){:target="_blank"}
+- [📊 Полная архитектура](../../full-diagram.md){:target="_blank"}
+
+### Навигация
+[⬅️ Обзор архитектуры](../../diagram.md) | [🏠 Главная](../../index.md)
