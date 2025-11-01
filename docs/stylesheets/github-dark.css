@@ -146,21 +146,29 @@
 .md-typeset code {
   background-color: var(--github-dark-code-bg);
   color: var(--github-dark-text-primary);
-  border: 1px solid var(--github-dark-code-border);
+  border: none;
   border-radius: 6px;
   padding: 2px 6px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85em;
 }
 
 .md-typeset pre {
   background-color: var(--github-dark-code-bg);
-  border: 1px solid var(--github-dark-code-border);
+  border: none;
   border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow-x: auto;
 }
 
 .md-typeset pre code {
   background-color: transparent;
   border: none;
   padding: 0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 /* Tables */
@@ -271,15 +279,17 @@
 
 /* Admonitions */
 .md-typeset .admonition {
-  border: 1px solid var(--github-dark-border-default);
+  border: none;
   border-radius: 6px;
   background-color: var(--github-dark-bg-secondary);
+  border-left: 4px solid var(--github-dark-accent-blue);
 }
 
 .md-typeset .admonition-title {
-  background-color: var(--github-dark-bg-tertiary);
-  border-bottom: 1px solid var(--github-dark-border-default);
+  background-color: transparent;
+  border-bottom: none;
   color: var(--github-dark-text-primary);
+  padding: 12px 16px 8px 16px;
 }
 
 /* Mermaid diagrams container */
@@ -366,15 +376,49 @@
 /* Source code highlighting improvements */
 .highlight {
   background-color: var(--github-dark-code-bg) !important;
-  border: 1px solid var(--github-dark-code-border);
+  border: none;
   border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
 }
 
 .highlight .linenos {
-  background-color: var(--github-dark-bg-tertiary);
+  background-color: transparent;
   color: var(--github-dark-text-tertiary);
-  border-right: 1px solid var(--github-dark-border-default);
+  border-right: none;
+  padding-right: 12px;
+  margin-right: 12px;
+  user-select: none;
 }
+
+/* Syntax highlighting colors for GitHub Dark */
+.highlight .c { color: #7c7c7c; font-style: italic; } /* Comment */
+.highlight .k { color: #ff7b72; } /* Keyword */
+.highlight .s { color: #a5c261; } /* String */
+.highlight .n { color: var(--github-dark-text-primary); } /* Name */
+.highlight .nf { color: #d2a8ff; } /* Name.Function */
+.highlight .nc { color: #ffa657; } /* Name.Class */
+.highlight .nb { color: #79c0ff; } /* Name.Builtin */
+.highlight .o { color: #ff7b72; } /* Operator */
+.highlight .m { color: #79c0ff; } /* Number */
+.highlight .mi { color: #79c0ff; } /* Number.Integer */
+.highlight .mf { color: #79c0ff; } /* Number.Float */
+.highlight .nt { color: #7ee787; } /* Name.Tag */
+.highlight .na { color: #79c0ff; } /* Name.Attribute */
+.highlight .nv { color: #ffa657; } /* Name.Variable */
+.highlight .bp { color: #79c0ff; } /* Name.Builtin.Pseudo */
+.highlight .kn { color: #ff7b72; } /* Keyword.Namespace */
+.highlight .kc { color: #79c0ff; } /* Keyword.Constant */
+.highlight .kd { color: #ff7b72; } /* Keyword.Declaration */
+.highlight .kt { color: #ffa657; } /* Keyword.Type */
+.highlight .cp { color: #7c7c7c; } /* Comment.Preproc */
+.highlight .se { color: #79c0ff; } /* String.Escape */
+.highlight .si { color: #a5c261; } /* String.Interpol */
+.highlight .sx { color: #a5c261; } /* String.Other */
+
+/* Pascal/Structured Text specific */
+.highlight .kr { color: #ff7b72; } /* Keyword.Reserved */
+.highlight .nn { color: #ffa657; } /* Name.Namespace */
 
 /* Responsive adjustments */
 @media screen and (max-width: 76.1875em) {
