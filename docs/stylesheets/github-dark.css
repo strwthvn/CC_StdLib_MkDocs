@@ -313,16 +313,35 @@
   color: var(--github-dark-text-primary);
   border-bottom: 1px solid var(--github-dark-border-muted);
   font-weight: 600;
+  padding: 12px 12px 8px 12px;
+  margin-bottom: 8px;
+}
+
+.md-nav--secondary .md-nav__list {
+  padding-top: 4px;
+}
+
+.md-nav--secondary .md-nav__item {
+  margin: 2px 0;
 }
 
 .md-nav--secondary .md-nav__link {
   color: var(--github-dark-text-secondary);
   font-size: 0.8rem;
+  padding: 4px 12px;
+  margin: 1px 0;
+  border-radius: 4px;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  background-color: var(--github-dark-bg-tertiary);
+  color: var(--github-dark-text-primary);
 }
 
 .md-nav--secondary .md-nav__link--active {
   color: var(--github-dark-accent-blue);
   font-weight: 500;
+  background-color: rgba(88, 166, 255, 0.1);
 }
 
 /* Scroll bars */
