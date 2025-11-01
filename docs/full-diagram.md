@@ -7,14 +7,17 @@
 config:
   theme: dark
   themeVariables:
-    background: '#1e1e1e'
-    primaryColor: '#3f3f46'
-    primaryTextColor: '#e4e4e7'
-    primaryBorderColor: '#71717a'
-    lineColor: '#a1a1aa'
-    secondaryColor: '#27272a'
-    tertiaryColor: '#18181b'
-    classText: '#e4e4e7'
+    background: '#0d1117'
+    primaryColor: '#161b22'
+    primaryTextColor: '#e6edf3'
+    primaryBorderColor: '#30363d'
+    lineColor: '#58a6ff'
+    secondaryColor: '#21262d'
+    tertiaryColor: '#161b22'
+    classText: '#e6edf3'
+    cScale0: '#21262d'
+    cScale1: '#21262d'
+    cScale2: '#21262d'
   layout: elk
 ---
 classDiagram

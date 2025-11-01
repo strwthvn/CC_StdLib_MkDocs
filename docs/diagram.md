@@ -35,14 +35,17 @@
 config:
   theme: dark
   themeVariables:
-    background: '#1e1e1e'
-    primaryColor: '#3f3f46'
-    primaryTextColor: '#e4e4e7'
-    primaryBorderColor: '#71717a'
-    lineColor: '#a1a1aa'
-    secondaryColor: '#27272a'
-    tertiaryColor: '#18181b'
-    classText: '#e4e4e7'
+    background: '#0d1117'
+    primaryColor: '#161b22'
+    primaryTextColor: '#e6edf3'
+    primaryBorderColor: '#30363d'
+    lineColor: '#58a6ff'
+    secondaryColor: '#21262d'
+    tertiaryColor: '#161b22'
+    classText: '#e6edf3'
+    nodeBkg: '#21262d'
+    nodeTextColor: '#e6edf3'
+    nodeBorder: '#30363d'
 ---
 graph TD
     A[FB_BasicSignal] --> B[FB_SignalWithTrigger]
@@ -58,10 +61,10 @@ graph TD
     K[I_Control] -.-> I
     L[FB_BasicControl] --> K
     
-    style A fill:#374151,stroke:#6b7280,color:#e5e7eb
-    style E fill:#4c1d95,stroke:#7c3aed,color:#e5e7eb
-    style H fill:#065f46,stroke:#10b981,color:#e5e7eb
-    style K fill:#92400e,stroke:#f59e0b,color:#e5e7eb
+    style A fill:#21262d,stroke:#58a6ff,color:#e6edf3
+    style E fill:#21262d,stroke:#3fb950,color:#e6edf3
+    style H fill:#21262d,stroke:#ffa657,color:#e6edf3
+    style K fill:#21262d,stroke:#f778ba,color:#e6edf3
 ```
 
 ## Описание основных компонентов

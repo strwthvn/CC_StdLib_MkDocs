@@ -12,8 +12,8 @@ theme:
   language: ru
   palette:
     scheme: slate
-    primary: indigo
-    accent: indigo
+    primary: blue grey
+    accent: blue
   features:
     - navigation.tabs
     - navigation.sections
@@ -89,3 +89,7 @@ plugins:
       lang: ru
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - mermaid2
+
+# Custom CSS
+extra_css:
+  - stylesheets/github-dark.css
