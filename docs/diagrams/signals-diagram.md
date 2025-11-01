@@ -224,26 +224,26 @@ direction TB
 
 ---
 
-## 🔗 Связанные разделы
+## Связанные разделы
 
 ### Дискретные сигналы
-- [🔄 FB_BasicSignal](../signal/discrete/FB_BasicSignal.md) - Базовый дискретный сигнал
-- [📤 FB_SignalWithFeedback](../signal/discrete/FB_SignalWithFeedback.md) - Контроль обратной связи
-- [🕒 FB_SignalWithFeedbackTimer](../signal/discrete/FB_SignalWithFeedbackTimer.md) - Таймаут обратной связи
+- [FB_BasicSignal](../signal/discrete/FB_BasicSignal.md) - Базовый дискретный сигнал
+- [FB_SignalWithFeedback](../signal/discrete/FB_SignalWithFeedback.md) - Контроль обратной связи
+- [FB_SignalWithFeedbackTimer](../signal/discrete/FB_SignalWithFeedbackTimer.md) - Таймаут обратной связи
 
 ### Аналоговые сигналы  
-- [📊 FB_BasicAnalogSignal](../signal/analog/FB_BasicAnalogSignal.md) - Базовый аналоговый сигнал
-- [🔌 FB_AnalogSignal4_20mA](../signal/analog/FB_AnalogSignal4_20mA.md) - Токовая петля 4-20мА
-- [📈 FB_UniversalAnalogSignal](../signal/analog/FB_UniversalAnalogSignal.md) - Универсальный аналоговый вход
+- [FB_BasicAnalogSignal](../signal/analog/FB_BasicAnalogSignal.md) - Базовый аналоговый сигнал
+- [FB_AnalogSignal4_20mA](../signal/analog/FB_AnalogSignal4_20mA.md) - Токовая петля 4-20мА
+- [FB_UniversalAnalogSignal](../signal/analog/FB_UniversalAnalogSignal.md) - Универсальный аналоговый вход
 
 ### Диагностика
-- [📉 FB_NumericChangeDetector](../signal/analog/FB_NumericChangeDetector.md) - Детекция изменений значений
-- [⚠️ FB_RangeDiagnostic_LH](../signal/analog/FB_RangeDiagnostic_LH.md) - Контроль уставок
+- [FB_NumericChangeDetector](../signal/analog/FB_NumericChangeDetector.md) - Детекция изменений значений
+- [FB_RangeDiagnostic_LH](../signal/analog/FB_RangeDiagnostic_LH.md) - Контроль уставок
 
 ### Другие диаграммы
-- [⚙️ Механизмы и управление](mechanisms-diagram.md){:target="_blank"}
-- [📡 Коммуникация](communication-diagram.md){:target="_blank"}
-- [📊 Полная диаграмма](../full-diagram.md){:target="_blank"}
+- [Механизмы и управление](mechanisms-diagram.md){:target="_blank"}
+- [Коммуникация](communication-diagram.md){:target="_blank"}
+- [Полная диаграмма](../full-diagram.md){:target="_blank"}
 
 ### Навигация
-[⬅️ Обзор архитектуры](../diagram.md) | [🏠 Главная](../index.md)
+[Обзор архитектуры](../diagram.md) | [Главная](../index.md)

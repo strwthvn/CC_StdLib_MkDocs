@@ -161,25 +161,25 @@ direction TB
 
 ---
 
-## 🔗 Связанные разделы
+## Связанные разделы
 
 ### Базовые механизмы
-- [🏗️ FB_AbstractMechanism](../mechanism/FB_AbstractMechanism.md) - Абстрактный базовый класс
-- [⚙️ FB_Mechanism](../mechanism/FB_Mechanism.md) - Базовая реализация механизма  
-- [🔄 FB_MechanismWithFeedback](../mechanism/FB_MechanismWithFeedback.md) - Механизм с диагностикой
+- [FB_AbstractMechanism](../mechanism/FB_AbstractMechanism.md) - Абстрактный базовый класс
+- [FB_Mechanism](../mechanism/FB_Mechanism.md) - Базовая реализация механизма  
+- [FB_MechanismWithFeedback](../mechanism/FB_MechanismWithFeedback.md) - Механизм с диагностикой
 
 ### Управление
-- [🎛️ FB_BasicControl](../control/FB_BasicControl.md) - Базовое управление с условиями
-- [📊 FB_FrequencyControl](../control/FB_FrequencyControl.md) - Управление частотными преобразователями
+- [FB_BasicControl](../control/FB_BasicControl.md) - Базовое управление с условиями
+- [FB_FrequencyControl](../control/FB_FrequencyControl.md) - Управление частотными преобразователями
 
 ### Сигналы для механизмов
-- [📤 FB_SignalWithFeedback](../signal/discrete/FB_SignalWithFeedback.md) - Контроль обратной связи
-- [🔄 FB_SignalWithTrigger](../signal/discrete/FB_SignalWithTrigger.md) - Детекция команд управления
+- [FB_SignalWithFeedback](../signal/discrete/FB_SignalWithFeedback.md) - Контроль обратной связи
+- [FB_SignalWithTrigger](../signal/discrete/FB_SignalWithTrigger.md) - Детекция команд управления
 
 ### Другие диаграммы
-- [🔄 Обработка сигналов](signals-diagram.md){:target="_blank"}
-- [📡 Коммуникация](communication-diagram.md){:target="_blank"}
-- [📊 Полная диаграмма](../full-diagram.md){:target="_blank"}
+- [Обработка сигналов](signals-diagram.md){:target="_blank"}
+- [Коммуникация](communication-diagram.md){:target="_blank"}
+- [Полная диаграмма](../full-diagram.md){:target="_blank"}
 
 ### Навигация
-[⬅️ Обзор архитектуры](../diagram.md) | [🏠 Главная](../index.md)
+[Обзор архитектуры](../diagram.md) | [Главная](../index.md)
