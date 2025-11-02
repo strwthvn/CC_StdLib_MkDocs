@@ -521,6 +521,29 @@ a:active {
 .highlight .kr { color: #ff7b72; } /* Keyword.Reserved */
 .highlight .nn { color: #ffa657; } /* Name.Namespace */
 
+/* IEC 61131-3 Structured Text specific highlighting */
+.highlight .kd { color: #ff7b72; } /* Keyword.Declaration (VAR, VAR_INPUT, etc.) */
+.highlight .kn { color: #ff7b72; } /* Keyword.Namespace (PROGRAM, FUNCTION_BLOCK, etc.) */
+.highlight .kc { color: #79c0ff; } /* Keyword.Constant (TRUE, FALSE) */
+.highlight .kt { color: #79c0ff; } /* Keyword.Type (BOOL, INT, REAL, etc.) */
+.highlight .nb { color: #79c0ff; } /* Name.Builtin (system variables %) */
+.highlight .nf { color: #d2a8ff; } /* Name.Function (function calls) */
+.highlight .nc { color: #79c0ff; } /* Name.Class (type names) */
+.highlight .s { color: #a5d6ff; } /* String */
+.highlight .s1 { color: #a5d6ff; } /* String.Single */
+.highlight .s2 { color: #a5d6ff; } /* String.Double */
+.highlight .m { color: #79c0ff; } /* Number */
+.highlight .mh { color: #79c0ff; } /* Number.Hex */
+.highlight .mi { color: #79c0ff; } /* Number.Integer */
+.highlight .mf { color: #79c0ff; } /* Number.Float */
+.highlight .mb { color: #79c0ff; } /* Number.Bin */
+.highlight .mo { color: #79c0ff; } /* Number.Oct */
+.highlight .c { color: #8b949e; font-style: italic; } /* Comment */
+.highlight .c1 { color: #8b949e; font-style: italic; } /* Comment.Single */
+.highlight .cm { color: #8b949e; font-style: italic; } /* Comment.Multiline */
+.highlight .o { color: #ff7b72; } /* Operator */
+.highlight .p { color: var(--github-dark-text-primary); } /* Punctuation */
+
 /* Hide footer copyright */
 .md-footer-meta__inner {
   display: none;

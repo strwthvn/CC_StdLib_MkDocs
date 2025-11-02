@@ -40,6 +40,7 @@ nav:
   - Начало работы: getting-started.md
   - Архитектура: diagram.md
   - Коммуникация: Communication.md
+  - Синтаксис ST: st-syntax-examples.md
   - Сигналы:
     - Дискретные сигналы:
       - signal/discrete/FB_BasicSignal.md
@@ -91,6 +92,10 @@ plugins:
       lang: ru
       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - mermaid2
+
+# Hooks
+hooks:
+  - hooks.py
 
 # Custom CSS
 extra_css:
