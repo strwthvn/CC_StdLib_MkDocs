@@ -10,7 +10,7 @@
 
 ### Наследование
 
-```pascal
+```iecst
 FB_MechanismWithFeedback EXTENDS FB_Mechanism
 ```
 
@@ -32,7 +32,7 @@ FB_MechanismWithFeedback EXTENDS FB_Mechanism
 
 ### Перечисление E_StateFeedback
 
-```pascal
+```iecst
 TYPE E_StateFeedback :
 (
     Inactive                   := 0,   // Обратная связь неактивна (норма при остановке)
@@ -78,7 +78,7 @@ END_TYPE
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetFeedbackWithoutPower : BOOL
 ```
 
@@ -96,7 +96,7 @@ METHOD GetFeedbackWithoutPower : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPowerAndFeedback : BOOL
 ```
 
@@ -114,7 +114,7 @@ METHOD GetPowerAndFeedback : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPowerWithoutFeedback : BOOL
 ```
 
@@ -132,7 +132,7 @@ METHOD GetPowerWithoutFeedback : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetState : E_StateFeedback
 ```
 
@@ -148,7 +148,7 @@ METHOD GetState : E_StateFeedback
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD PROTECTED UpdateState
 ```
 
@@ -165,7 +165,7 @@ METHOD PROTECTED UpdateState
 
 ### Пример 1: Контроль привода клапана
 
-```pascal
+```iecst
 PROGRAM PRG_ValveControl
 VAR
     fbValveActuator : FB_MechanismWithFeedback;
@@ -217,7 +217,7 @@ END_IF
 
 ### Пример 2: Контроль электродвигателя с токовым реле
 
-```pascal
+```iecst
 PROGRAM PRG_MotorControl
 VAR
     fbMotorControl : FB_MechanismWithFeedback;

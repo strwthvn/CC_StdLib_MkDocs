@@ -18,7 +18,7 @@
 
 ### Объявление функциональных блоков
 
-```pascal
+```iecst
 PROGRAM PLC_PRG
 VAR
     // Дискретный сигнал с обратной связью
@@ -40,7 +40,7 @@ END_VAR
 
 ### Инициализация и вызов блоков
 
-```pascal
+```iecst
 // В теле программы PLC_PRG
 signalPump(
     ixSignal := startButton,
@@ -94,7 +94,7 @@ processedTemp := tempSensor.GetScaledValue();
 
 ### Пример 1: Управление насосом с обратной связью
 
-```pascal
+```iecst
 PROGRAM PumpControl
 VAR
     pumpSignal : FB_SignalWithFeedbackTimer;
@@ -115,7 +115,7 @@ pumpError := pumpSignal.GetFeedbackTimeout();
 
 ### Пример 2: Обработка аналогового датчика температуры
 
-```pascal
+```iecst
 PROGRAM TemperatureProcessing
 VAR
     tempInput : FB_UniversalAnalogSignal;

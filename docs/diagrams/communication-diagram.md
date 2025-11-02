@@ -82,7 +82,7 @@ direction TB
 
 #### U_ByteToWord
 Преобразование между WORD (16-бит) и массивом из 2 байтов:
-```pascal
+```iecst
 TYPE U_ByteToWord :
 UNION
     wTag: WORD;
@@ -98,7 +98,7 @@ END_TYPE
 
 #### U_RealToWord  
 Преобразование между REAL (32-бит) и массивом из 2 WORD:
-```pascal
+```iecst
 TYPE U_RealToWord :
 UNION
     wTag: ARRAY [0..1] OF WORD;
@@ -116,7 +116,7 @@ END_TYPE
 
 #### FC_SwapBytesInWord
 Меняет местами байты в WORD (Little-endian ↔ Big-endian):
-```pascal
+```iecst
 Input:  16#1234
 Output: 16#3412
 ```
@@ -128,14 +128,14 @@ Output: 16#3412
 
 #### FC_SwapBytesInWordArray
 Применяет операцию смены байтов к каждому элементу массива WORD:
-```pascal
+```iecst
 Input:  [16#1234, 16#5678]
 Output: [16#3412, 16#7856]
 ```
 
 #### FC_SwapWordArrayElements
 Меняет местами элементы массива WORD:
-```pascal
+```iecst
 Input:  [16#1234, 16#5678]
 Output: [16#5678, 16#1234]
 ```
@@ -143,7 +143,7 @@ Output: [16#5678, 16#1234]
 ## Типовые сценарии использования
 
 ### 1. Обмен REAL через Modbus
-```pascal
+```iecst
 VAR
     uRealConverter : U_RealToWord;
     awModbusRegisters : ARRAY [0..1] OF WORD;
@@ -160,7 +160,7 @@ rTemperature := uRealConverter.rTag;
 ```
 
 ### 2. Обработка данных с разным порядком байтов
-```pascal
+```iecst
 VAR
     wEthernetData : WORD := 16#1234;  // Big-endian из сети
     wPLCData : WORD;                  // Little-endian для ПЛК
@@ -171,7 +171,7 @@ wPLCData := FC_SwapBytesInWord(wEthernetData);
 ```
 
 ### 3. Работа с отдельными байтами
-```pascal
+```iecst
 VAR
     uByteConverter : U_ByteToWord;
     bHighByte, bLowByte : BYTE;

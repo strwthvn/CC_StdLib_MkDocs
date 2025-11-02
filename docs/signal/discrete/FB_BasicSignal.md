@@ -30,7 +30,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetSignal : BOOL
 ```
 
@@ -42,7 +42,7 @@ METHOD GetSignal : BOOL
 - Не применяет никаких преобразований или фильтраций
 
 **Пример использования:**
-```pascal
+```iecst
 VAR
     fbSignal : FB_BasicSignal;
     xCurrentState : BOOL;
@@ -60,7 +60,7 @@ xCurrentState := fbSignal.GetSignal();
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetInvertedSignal : BOOL
 ```
 
@@ -72,7 +72,7 @@ METHOD GetInvertedSignal : BOOL
 - Полезно для работы с нормально-закрытыми контактами
 
 **Пример использования:**
-```pascal
+```iecst
 VAR
     fbSignal : FB_BasicSignal;
     xInvertedState : BOOL;

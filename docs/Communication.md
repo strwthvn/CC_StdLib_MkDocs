@@ -11,7 +11,7 @@
 #### U_ByteToWord
 Преобразование между WORD и массивом байтов.
 
-```pascal
+```iecst
 TYPE U_ByteToWord :
 UNION
     wTag: WORD;
@@ -21,7 +21,7 @@ END_TYPE
 ```
 
 **Применение:**
-```pascal
+```iecst
 VAR
     uConverter : U_ByteToWord;
 END_VAR
@@ -33,7 +33,7 @@ uConverter.wTag := 16#1234;
 #### U_RealToWord
 Преобразование между REAL и массивом WORD.
 
-```pascal
+```iecst
 TYPE U_RealToWord :
 UNION
     wTag: ARRAY [0..1] OF WORD;
@@ -43,7 +43,7 @@ END_TYPE
 ```
 
 **Применение:**
-```pascal
+```iecst
 VAR
     uConverter : U_RealToWord;
 END_VAR
@@ -57,7 +57,7 @@ uConverter.rTag := 123.45;
 #### FC_SwapBytesInWord
 Меняет местами байты в WORD (изменение порядка байтов).
 
-```pascal
+```iecst
 FUNCTION FC_SwapBytesInWord : WORD
 VAR_INPUT
     wInputValue : WORD;
@@ -65,7 +65,7 @@ END_VAR
 ```
 
 **Применение:**
-```pascal
+```iecst
 VAR
     wResult : WORD;
 END_VAR
@@ -77,7 +77,7 @@ wResult := FC_SwapBytesInWord(16#1234);
 #### FC_SwapBytesInWordArray
 Меняет местами байты в каждом элементе массива WORD.
 
-```pascal
+```iecst
 FUNCTION FC_SwapBytesInWordArray : ARRAY [0..1] OF WORD
 VAR_INPUT
     awInputArray : ARRAY [0..1] OF WORD;
@@ -85,7 +85,7 @@ END_VAR
 ```
 
 **Применение:**
-```pascal
+```iecst
 VAR
     awInput : ARRAY [0..1] OF WORD := [16#1234, 16#5678];
     awResult : ARRAY [0..1] OF WORD;
@@ -98,7 +98,7 @@ awResult := FC_SwapBytesInWordArray(awInput);
 #### FC_SwapWordArrayElements
 Меняет местами элементы массива WORD.
 
-```pascal
+```iecst
 FUNCTION FC_SwapWordArrayElements : ARRAY [0..1] OF WORD
 VAR_INPUT
     awInputArray : ARRAY [0..1] OF WORD;
@@ -106,7 +106,7 @@ END_VAR
 ```
 
 **Применение:**
-```pascal
+```iecst
 VAR
     awInput : ARRAY [0..1] OF WORD := [16#1234, 16#5678];
     awResult : ARRAY [0..1] OF WORD;
@@ -120,7 +120,7 @@ awResult := FC_SwapWordArrayElements(awInput);
 
 ### Обмен данными REAL через Modbus
 
-```pascal
+```iecst
 VAR
     uRealConverter : U_RealToWord;
     awModbusData : ARRAY [0..1] OF WORD;
@@ -138,7 +138,7 @@ rTemperature := uRealConverter.rTag;
 
 ### Обработка данных с разным порядком байтов
 
-```pascal
+```iecst
 VAR
     wEthernetData : WORD := 16#1234;  // Big-endian
     wPLCData : WORD;                  // Little-endian

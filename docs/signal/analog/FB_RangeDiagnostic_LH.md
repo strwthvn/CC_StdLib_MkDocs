@@ -39,7 +39,7 @@
 
 ### Перечисление E_AlarmSetpoints
 
-```pascal
+```iecst
 TYPE E_AlarmSetpoints :
 (
     Normal      := 0,   // Нормальное состояние
@@ -89,7 +89,7 @@ END_TYPE
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetAlarmCode : E_AlarmSetpoints
 ```
 
@@ -103,7 +103,7 @@ METHOD GetAlarmCode : E_AlarmSetpoints
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetCurrentValue : REAL
 ```
 
@@ -117,7 +117,7 @@ METHOD GetCurrentValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsNormal : BOOL
 ```
 
@@ -133,7 +133,7 @@ METHOD IsNormal : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsLowAlarm : BOOL
 ```
 
@@ -149,7 +149,7 @@ METHOD IsLowAlarm : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsHighAlarm : BOOL
 ```
 
@@ -165,7 +165,7 @@ METHOD IsHighAlarm : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD AreSetpointsValid : BOOL
 ```
 
@@ -181,7 +181,7 @@ METHOD AreSetpointsValid : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetDistanceToNearestSetpoint : REAL
 ```
 
@@ -195,7 +195,7 @@ METHOD GetDistanceToNearestSetpoint : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetAllSetpoints
 VAR_INPUT
     rLL : REAL;     // Авария низкого уровня
@@ -215,7 +215,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetSymmetricSetpoints
 VAR_INPUT
     rCenterValue : REAL;    // Центральное (номинальное) значение
@@ -225,7 +225,7 @@ END_VAR
 ```
 
 **Пример использования:**
-```pascal
+```iecst
 // Для температуры с номиналом 50°C, предупреждения ±5°C, аварии ±10°C
 fbTempDiag.SetSymmetricSetpoints(50.0, 5.0, 10.0);
 // Результат: LL=40, L=45, H=55, HH=60
@@ -239,7 +239,7 @@ fbTempDiag.SetSymmetricSetpoints(50.0, 5.0, 10.0);
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetSetpointsPercent
 VAR_INPUT
     rMinValue : REAL;       // Минимальное значение диапазона
@@ -252,7 +252,7 @@ END_VAR
 ```
 
 **Пример использования:**
-```pascal
+```iecst
 // Для давления 0-10 бар: LL=5%, L=10%, H=90%, HH=95%
 fbPressureDiag.SetSetpointsPercent(0.0, 10.0, 5.0, 10.0, 90.0, 95.0);
 // Результат: LL=0.5, L=1.0, H=9.0, HH=9.5 бар
@@ -266,7 +266,7 @@ fbPressureDiag.SetSetpointsPercent(0.0, 10.0, 5.0, 10.0, 90.0, 95.0);
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -283,7 +283,7 @@ METHOD Reset
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ForceNormal
 ```
 
@@ -296,7 +296,7 @@ METHOD ForceNormal
 
 ### Контроль температуры
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbTempDiagnostic : FB_RangeDiagnostic_LH;
@@ -355,7 +355,7 @@ END_CASE
 
 ### Мониторинг давления
 
-```pascal
+```iecst
 VAR
     fbPressureDiag : FB_RangeDiagnostic_LH;
     rPressure : REAL;             // Текущее давление (бар)
@@ -421,7 +421,7 @@ END_CASE
 
 ### Контроль уровня с процентными уставками
 
-```pascal
+```iecst
 VAR
     fbLevelDiag : FB_RangeDiagnostic_LH;
     rTankLevel : REAL;            // Уровень в баке (0-100%)
@@ -471,7 +471,7 @@ END_IF
 
 ### Многопараметровый мониторинг
 
-```pascal
+```iecst
 VAR
     afbProcessDiag : ARRAY[1..4] OF FB_RangeDiagnostic_LH;
     arProcessValues : ARRAY[1..4] OF REAL;

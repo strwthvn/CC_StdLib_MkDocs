@@ -10,7 +10,7 @@
 
 ### Наследование
 
-```pascal
+```iecst
 FB_Mechanism EXTENDS FB_AbstractMechanism
 ```
 
@@ -57,7 +57,7 @@ FB_Mechanism EXTENDS FB_AbstractMechanism
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Start
 ```
 
@@ -74,7 +74,7 @@ METHOD Start
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Stop
 ```
 
@@ -93,7 +93,7 @@ METHOD Stop
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetPower
 VAR_INPUT
     x : BOOL;
@@ -104,7 +104,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPower : BOOL
 ```
 
@@ -112,7 +112,7 @@ METHOD GetPower : BOOL
 
 ### Базовое использование
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbSimpleMechanism : FB_Mechanism;
@@ -149,7 +149,7 @@ END_IF
 
 ### Использование с внешними условиями
 
-```pascal
+```iecst
 VAR
     fbConditionalMechanism : FB_Mechanism;
     xOperatorEnable : BOOL;       // Разрешение оператора
@@ -182,7 +182,7 @@ END_IF
 
 ### Массовое управление механизмами
 
-```pascal
+```iecst
 VAR
     afbMechanisms : ARRAY[1..5] OF FB_Mechanism;
     xStartAllButton : BOOL;      // Пуск всех механизмов
@@ -220,7 +220,7 @@ END_FOR
 
 ### Интеграция с системой последовательного управления
 
-```pascal
+```iecst
 VAR
     fbMechanism1 : FB_Mechanism;
     fbMechanism2 : FB_Mechanism;
@@ -311,7 +311,7 @@ END_IF
 
 ### Использование с обратной связью
 
-```pascal
+```iecst
 VAR
     fbMechanismWithFeedback : FB_Mechanism;
     xRunCommand : BOOL;          // Команда запуска
@@ -383,7 +383,7 @@ END_CASE
 
 ### Создание производного класса с дополнительной логикой
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_EnhancedMechanism EXTENDS FB_Mechanism
 VAR_INPUT
     ixEnableInput : BOOL;        // Вход разрешения
@@ -433,7 +433,7 @@ END_FUNCTION_BLOCK
 
 ### Интеграция с интерфейсами
 
-```pascal
+```iecst
 // FB_Mechanism уже совместим с интерфейсом I_Control
 // благодаря реализации методов Start() и Stop()
 
@@ -454,7 +454,7 @@ ifcControllable.Stop();
 
 ### Простая диагностика
 
-```pascal
+```iecst
 VAR
     fbDiagMechanism : FB_Mechanism;
     stMechanismStatus : ST_MechanismStatus;
@@ -519,7 +519,7 @@ END_IF
 
 ### Рекомендации по расширению
 
-```pascal
+```iecst
 // Хороший подход - наследование с добавлением функциональности
 FUNCTION_BLOCK FB_MySpecialMechanism EXTENDS FB_Mechanism
     // Добавить входы/выходы

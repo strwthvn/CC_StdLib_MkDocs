@@ -37,7 +37,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetReceivedFeedback : BOOL
 ```
 
@@ -53,7 +53,7 @@ METHOD GetReceivedFeedback : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetWaitingFeedback : BOOL
 ```
 
@@ -69,7 +69,7 @@ METHOD GetWaitingFeedback : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ResetReceivedFeedback
 ```
 
@@ -85,7 +85,7 @@ METHOD ResetReceivedFeedback
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ResetWaitingFeedback
 ```
 

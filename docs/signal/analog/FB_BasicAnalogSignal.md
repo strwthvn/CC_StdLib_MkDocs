@@ -46,7 +46,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetRawValue : REAL
 ```
 
@@ -60,7 +60,7 @@ METHOD GetRawValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetProcessedValue : REAL
 ```
 
@@ -74,7 +74,7 @@ METHOD GetProcessedValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsOutOfRange : BOOL
 ```
 
@@ -90,7 +90,7 @@ METHOD IsOutOfRange : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetMinValue : REAL
 ```
 
@@ -104,7 +104,7 @@ METHOD GetMinValue : REAL
 
 **Prototип:**
 
-```pascal
+```iecst
 METHOD GetMaxValue : REAL
 ```
 
@@ -118,7 +118,7 @@ METHOD GetMaxValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetRange
 VAR_INPUT
     rMinValue : REAL;   // Минимальное значение
@@ -140,7 +140,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsInRange : BOOL
 VAR_INPUT
     rValue : REAL;  // Проверяемое значение
@@ -159,7 +159,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ClampToRange : REAL
 VAR_INPUT
     rValue : REAL;  // Входное значение
@@ -179,7 +179,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -195,7 +195,7 @@ METHOD Reset
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ABSTRACT ProcessRawValue
 ```
 
@@ -209,7 +209,7 @@ METHOD ABSTRACT ProcessRawValue
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD PROTECTED ValidateRange
 ```
 
@@ -223,7 +223,7 @@ METHOD PROTECTED ValidateRange
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD PROTECTED SetProcessedValue
 VAR_INPUT
     rValue : REAL;  // Обработанное значение
@@ -236,7 +236,7 @@ END_VAR
 
 ### Пример простого производного класса
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_SimpleAnalogSignal EXTENDS FB_BasicAnalogSignal
 VAR_INPUT
     rGain : REAL := 1.0;        // Коэффициент усиления
@@ -260,7 +260,7 @@ END_FUNCTION_BLOCK
 
 ### Пример использования производного класса
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbAnalogSignal : FB_SimpleAnalogSignal;
@@ -294,7 +294,7 @@ END_IF
 
 ### Блок с фильтрацией
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_FilteredAnalogSignal EXTENDS FB_BasicAnalogSignal
 VAR_INPUT
     rFilterConstant : REAL := 0.1;  // Константа фильтра (0..1)
@@ -325,7 +325,7 @@ END_FUNCTION_BLOCK
 
 ### Блок с калибровкой
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_CalibratedAnalogSignal EXTENDS FB_BasicAnalogSignal
 VAR_INPUT
     rZeroPoint : REAL := 0.0;       // Точка нуля
@@ -363,7 +363,7 @@ END_FUNCTION_BLOCK
 
 ### Мониторинг состояния
 
-```pascal
+```iecst
 // Пример комплексной диагностики
 VAR
     fbAnalogDiag : FB_BasicAnalogSignal;
@@ -406,7 +406,7 @@ END_IF
 
 ### Именование производных классов
 
-```pascal
+```iecst
 FB_AnalogSignal4_20mA       // Токовая петля 4-20 мА
 FB_AnalogSignalPt100        // Температурный датчик Pt100
 FB_AnalogSignalPressure     // Датчик давления
@@ -416,7 +416,7 @@ FB_AnalogSignalCalibrated   // С калибровкой
 
 ### Обработка ошибок
 
-```pascal
+```iecst
 // Рекомендуемый подход к обработке ошибок в ProcessRawValue
 METHOD ProcessRawValue
 VAR_INPUT

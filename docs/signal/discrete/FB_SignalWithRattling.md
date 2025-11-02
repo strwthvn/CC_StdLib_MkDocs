@@ -53,7 +53,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetProcessedSignal : BOOL
 ```
 
@@ -69,7 +69,7 @@ METHOD GetProcessedSignal : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetRattlingDetected : BOOL
 ```
 
@@ -85,7 +85,7 @@ METHOD GetRattlingDetected : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetTransitionCount : UINT
 ```
 
@@ -99,7 +99,7 @@ METHOD GetTransitionCount : UINT
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsDetectionActive : BOOL
 ```
 
@@ -115,7 +115,7 @@ METHOD IsDetectionActive : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetDetectionWindowTime : TIME
 ```
 
@@ -129,7 +129,7 @@ METHOD GetDetectionWindowTime : TIME
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ResetRattlingError
 ```
 
@@ -145,7 +145,7 @@ METHOD ResetRattlingError
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -169,7 +169,7 @@ METHOD Reset
 
 ### Базовое использование
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbRattlingFilter : FB_SignalWithRattling;
@@ -197,7 +197,7 @@ END_IF
 
 ### Диагностика концевых выключателей
 
-```pascal
+```iecst
 VAR
     fbLimitSwitch : FB_SignalWithRattling;
     xLimitSwitchRaw : BOOL;       // Сырой сигнал концевика
@@ -229,7 +229,7 @@ END_CASE
 
 ### Мониторинг качества контактов
 
-```pascal
+```iecst
 VAR
     fbContactMonitor : FB_SignalWithRattling;
     tMonitoringTime : TIME;       // Время мониторинга
@@ -265,7 +265,7 @@ END_IF
 
 ### Конфигурируемые параметры обнаружения
 
-```pascal
+```iecst
 // Настройка параметров для различных типов датчиков
 METHOD ConfigureForSensorType
 VAR_INPUT

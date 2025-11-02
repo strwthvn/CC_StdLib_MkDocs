@@ -38,7 +38,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetFeedbackTimeout : BOOL
 ```
 
@@ -54,7 +54,7 @@ METHOD GetFeedbackTimeout : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetElapsedTime : TIME
 ```
 
@@ -68,7 +68,7 @@ METHOD GetElapsedTime : TIME
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsTimerRunning : BOOL
 ```
 
@@ -84,7 +84,7 @@ METHOD IsTimerRunning : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ResetFeedbackTimeout
 ```
 
@@ -101,7 +101,7 @@ METHOD ResetFeedbackTimeout
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -131,7 +131,7 @@ METHOD Reset
 
 ### Базовое использование
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbSignalTimer : FB_SignalWithFeedbackTimer;
@@ -161,7 +161,7 @@ END_IF
 
 ### Расширенная диагностика
 
-```pascal
+```iecst
 // Диагностика с контролем времени выполнения
 CASE TRUE OF
     fbSignalTimer.GetSignal() AND fbSignalTimer.GetReceivedFeedback():
@@ -186,7 +186,7 @@ END_CASE
 
 ### Управление клапаном с контролем времени
 
-```pascal
+```iecst
 VAR
     fbValveControl : FB_SignalWithFeedbackTimer;
     xOpenCommand : BOOL;          // Команда открытия клапана
@@ -213,7 +213,7 @@ END_IF
 
 ### Мониторинг производительности
 
-```pascal
+```iecst
 // Отслеживание времени отклика устройства
 IF fbSignalTimer.GetReceivedFeedback() THEN
     tResponseTime := fbSignalTimer.GetElapsedTime();

@@ -48,7 +48,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetConditionToStart
 VAR_INPUT
     x : BOOL;
@@ -68,7 +68,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetConditionToStop
 VAR_INPUT
     x : BOOL;
@@ -88,7 +88,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Start
 VAR_INPUT
     cmd : BOOL;
@@ -110,7 +110,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Stop
 VAR_INPUT
     cmd : BOOL;
@@ -128,7 +128,7 @@ END_VAR
 
 ### Пример 1: Управление вентилятором с проверкой температуры
 
-```pascal
+```iecst
 PROGRAM PRG_FanControl
 VAR
     fbFan : FB_Mechanism;                    // Механизм вентилятора
@@ -192,7 +192,7 @@ END_IF
 
 ### Пример 2: Управление конвейером с блокировками
 
-```pascal
+```iecst
 PROGRAM PRG_ConveyorControl
 VAR
     fbConveyor : FB_Mechanism;               // Механизм конвейера

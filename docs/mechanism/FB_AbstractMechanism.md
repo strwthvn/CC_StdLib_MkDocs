@@ -51,7 +51,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetPower
 VAR_INPUT
     x : BOOL;  // Требуемое состояние питания
@@ -73,7 +73,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPower : BOOL
 ```
 
@@ -89,7 +89,7 @@ METHOD GetPower : BOOL
 
 ### Простой механизм
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_SimpleMechanism EXTENDS FB_AbstractMechanism
 VAR_INPUT
     ixStartCommand : BOOL;        // Команда запуска
@@ -121,7 +121,7 @@ END_FUNCTION_BLOCK
 
 ### Механизм с защитой
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_ProtectedMechanism EXTENDS FB_AbstractMechanism
 VAR_INPUT
     ixEnable : BOOL;              // Разрешение работы
@@ -160,7 +160,7 @@ END_FUNCTION_BLOCK
 
 ### Механизм с диагностикой
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_DiagnosticMechanism EXTENDS FB_AbstractMechanism
 VAR_INPUT
     ixMaintenanceMode : BOOL;     // Режим обслуживания
@@ -202,7 +202,7 @@ END_FUNCTION_BLOCK
 
 ### Базовое наследование
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbMyMechanism : FB_SimpleMechanism;
@@ -233,7 +233,7 @@ END_IF
 
 ### Полиморфное использование
 
-```pascal
+```iecst
 VAR
     afbMechanisms : ARRAY[1..3] OF POINTER TO FB_AbstractMechanism;
     fbMotor : FB_SimpleMechanism;
@@ -266,7 +266,7 @@ END_FOR
 
 ### Расширенное наследование с интерфейсами
 
-```pascal
+```iecst
 // Использование с интерфейсом управления
 FUNCTION_BLOCK FB_ControllableMechanism EXTENDS FB_AbstractMechanism IMPLEMENTS I_Control
 VAR_INPUT
@@ -308,7 +308,7 @@ END_FUNCTION_BLOCK
 
 ### Паттерн "Фабрика механизмов"
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_MechanismFactory
 VAR_INPUT
     eMechanismType : E_MechanismType;
@@ -341,7 +341,7 @@ END_FUNCTION_BLOCK
 
 ### Паттерн "Менеджер механизмов"
 
-```pascal
+```iecst
 FUNCTION_BLOCK FB_MechanismManager
 VAR_INPUT
     ixGlobalEnable : BOOL;        // Общее разрешение
@@ -402,7 +402,7 @@ END_FUNCTION_BLOCK
 
 ### Правила именования
 
-```pascal
+```iecst
 // Рекомендуемая структура имен для производных классов
 FB_BasicMotor          // Простой мотор
 FB_ServoMotor          // Сервомотор (расширение базового)

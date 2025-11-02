@@ -57,7 +57,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetScaledValue : REAL
 ```
 
@@ -73,7 +73,7 @@ METHOD GetScaledValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetNormalizedValue : REAL
 ```
 
@@ -87,7 +87,7 @@ METHOD GetNormalizedValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPercentValue : REAL
 ```
 
@@ -101,7 +101,7 @@ METHOD GetPercentValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetInputRangePercent : REAL
 ```
 
@@ -115,7 +115,7 @@ METHOD GetInputRangePercent : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsUnderrange : BOOL
 METHOD IsOverrange : BOOL
 ```
@@ -128,7 +128,7 @@ METHOD IsOverrange : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsCriticalLow : BOOL
 METHOD IsCriticalHigh : BOOL
 ```
@@ -141,7 +141,7 @@ METHOD IsCriticalHigh : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD HasError : BOOL          // Любые ошибки
 METHOD HasCriticalError : BOOL  // Только критические ошибки
 ```
@@ -154,7 +154,7 @@ METHOD HasCriticalError : BOOL  // Только критические ошиб�
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsInValidRange : BOOL
 ```
 
@@ -166,7 +166,7 @@ METHOD IsInValidRange : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetInputRange
 VAR_INPUT
     rMin : REAL;
@@ -188,7 +188,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetDiagnosticThresholds
 VAR_INPUT
     rUnderrangePercent : REAL;  // Процент для критически низкого
@@ -204,7 +204,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ConfigureAs4_20mA
 VAR_INPUT
     rProcessMin : REAL := 0.0;
@@ -220,7 +220,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ConfigureAs0_10V
 VAR_INPUT
     rProcessMin : REAL := 0.0;
@@ -236,7 +236,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ConfigureAs0_20mA
 VAR_INPUT
     rProcessMin : REAL := 0.0;
@@ -252,7 +252,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD ConfigureAsPt100
 VAR_INPUT
     rTempMin : REAL := -50.0;
@@ -268,7 +268,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetInputMin : REAL
 METHOD GetInputMax : REAL
 ```
@@ -281,7 +281,7 @@ METHOD GetInputMax : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetScaleMin : REAL
 METHOD GetScaleMax : REAL
 ```
@@ -294,7 +294,7 @@ METHOD GetScaleMax : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetInputSpan : REAL
 METHOD GetScaleSpan : REAL
 ```
@@ -303,7 +303,7 @@ METHOD GetScaleSpan : REAL
 
 ### Универсальный аналоговый вход
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbUniversalAI : FB_UniversalAnalogSignal;

@@ -36,7 +36,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetRtrig : BOOL
 ```
 
@@ -56,7 +56,7 @@ METHOD GetRtrig : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetFtrig : BOOL
 ```
 
@@ -81,7 +81,7 @@ METHOD GetFtrig : BOOL
 
 ### Базовое использование
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbTriggerDetector : FB_SignalWithTrigger;
@@ -111,7 +111,7 @@ END_IF
 
 ### Счетчик импульсов
 
-```pascal
+```iecst
 VAR
     fbPulseCounter : FB_SignalWithTrigger;
     xPulseInput : BOOL;           // Входные импульсы
@@ -135,7 +135,7 @@ END_IF
 
 ### Обработка кнопок
 
-```pascal
+```iecst
 VAR
     fbButtonProcessor : FB_SignalWithTrigger;
     xButton : BOOL;               // Состояние кнопки
@@ -163,7 +163,7 @@ END_IF
 
 ### Синхронизация процессов
 
-```pascal
+```iecst
 VAR
     fbSyncTrigger : FB_SignalWithTrigger;
     xSyncSignal : BOOL;           // Сигнал синхронизации
@@ -199,7 +199,7 @@ END_CASE
 
 ### Измерение времени между событиями
 
-```pascal
+```iecst
 VAR
     fbEventTrigger : FB_SignalWithTrigger;
     xEventSignal : BOOL;          // Сигнал события
@@ -230,7 +230,7 @@ tonEventTimer();
 
 ### Формирование команд управления
 
-```pascal
+```iecst
 VAR
     fbCommandTrigger : FB_SignalWithTrigger;
     xOperatorSwitch : BOOL;       // Переключатель оператора
@@ -270,7 +270,7 @@ END_IF
 
 ### Мониторинг активности
 
-```pascal
+```iecst
 // Подсчет активности сигнала
 VAR
     nRisingEdges : UINT := 0;     // Количество передних фронтов

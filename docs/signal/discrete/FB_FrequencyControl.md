@@ -46,7 +46,7 @@
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD Calculate
 VAR_INPUT
     rStep : REAL;                // Шаг изменения частоты [Гц/импульс]
@@ -77,7 +77,7 @@ END_VAR
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD SetFrequencyTarget
 VAR_INPUT
     rFrequency : REAL;  // Целевая частота [Гц]
@@ -99,7 +99,7 @@ END_VAR
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD SetFrequencyDirect
 VAR_INPUT
     rFrequency : REAL;  // Частота [Гц]
@@ -121,7 +121,7 @@ END_VAR
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD GetCurrentFrequency : REAL
 ```
 
@@ -136,7 +136,7 @@ METHOD GetCurrentFrequency : REAL
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD GetTargetFrequency : REAL
 ```
 
@@ -151,7 +151,7 @@ METHOD GetTargetFrequency : REAL
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -170,7 +170,7 @@ METHOD Reset
 **Прототип:**
 
 
-```pascal
+```iecst
 METHOD Hold
 ```
 

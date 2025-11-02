@@ -52,7 +52,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetScaledValue : REAL
 ```
 
@@ -68,7 +68,7 @@ METHOD GetScaledValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPercentValue : REAL
 ```
 
@@ -82,7 +82,7 @@ METHOD GetPercentValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsWireBreak : BOOL
 ```
 
@@ -98,7 +98,7 @@ METHOD IsWireBreak : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsOverload : BOOL
 ```
 
@@ -114,7 +114,7 @@ METHOD IsOverload : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsUnderrange : BOOL
 ```
 
@@ -130,7 +130,7 @@ METHOD IsUnderrange : BOOL
 
 **Prototип:**
 
-```pascal
+```iecst
 METHOD IsOverrange : BOOL
 ```
 
@@ -146,7 +146,7 @@ METHOD IsOverrange : BOOL
 
 **Prototип:**
 
-```pascal
+```iecst
 METHOD HasError : BOOL
 ```
 
@@ -162,7 +162,7 @@ METHOD HasError : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD SetScaleRange
 VAR_INPUT
     rMin : REAL;    // Минимальное значение
@@ -180,7 +180,7 @@ END_VAR
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetScaleMin : REAL
 METHOD GetScaleMax : REAL
 ```
@@ -193,7 +193,7 @@ METHOD GetScaleMax : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -205,7 +205,7 @@ METHOD Reset
 
 ### Обработка датчика температуры
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbTempSensor : FB_AnalogSignal4_20mA;
@@ -241,7 +241,7 @@ END_IF
 
 ### Обработка датчика давления
 
-```pascal
+```iecst
 VAR
     fbPressureSensor : FB_AnalogSignal4_20mA;
     rPressureCurrent : REAL;      // Ток (мА)
@@ -282,7 +282,7 @@ stPressureDiag.xAnyError := fbPressureSensor.HasError();
 
 ### Мониторинг качества сигнала
 
-```pascal
+```iecst
 VAR
     fbSignalMonitor : FB_AnalogSignal4_20mA;
     rSignalCurrent : REAL;        // Текущий ток
@@ -341,7 +341,7 @@ stSignalStatus.rProcessValue := fbSignalMonitor.GetScaledValue();
 
 ### Калибровка и настройка
 
-```pascal
+```iecst
 VAR
     fbCalibratedSensor : FB_AnalogSignal4_20mA;
     xCalibrationMode : BOOL;      // Режим калибровки
@@ -374,7 +374,7 @@ END_IF
 
 ### Архивирование и трендинг
 
-```pascal
+```iecst
 VAR
     fbTrendingSensor : FB_AnalogSignal4_20mA;
     fbChangeDetector : FB_NumericChangeDetector;
@@ -445,7 +445,7 @@ END_IF
 
 ### Статистика качества сигнала
 
-```pascal
+```iecst
 VAR
     fbQualityAnalyzer : FB_AnalogSignal4_20mA;
     stQualityStats : ST_QualityStatistics;
@@ -516,7 +516,7 @@ END_IF
 
 ### Подключение датчиков
 
-```pascal
+```iecst
 // Конфигурация для различных типов датчиков
 METHOD ConfigureForSensorType
 VAR_INPUT
@@ -546,7 +546,7 @@ END_CASE
 
 ### Обработка ошибок
 
-```pascal
+```iecst
 // Стратегия обработки ошибок токовой петли
 METHOD HandleLoopErrors
 VAR_INPUT

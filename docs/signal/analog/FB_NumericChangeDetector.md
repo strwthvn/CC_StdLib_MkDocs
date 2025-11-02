@@ -45,7 +45,7 @@
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetCurrentValue : REAL
 ```
 
@@ -59,7 +59,7 @@ METHOD GetCurrentValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetPreviousValue : REAL
 ```
 
@@ -73,7 +73,7 @@ METHOD GetPreviousValue : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD GetValueDifference : REAL
 ```
 
@@ -90,7 +90,7 @@ METHOD GetValueDifference : REAL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD IsValueIncreased : BOOL
 ```
 
@@ -106,7 +106,7 @@ METHOD IsValueIncreased : BOOL
 
 **Prototип:**
 
-```pascal
+```iecst
 METHOD IsValueDecreased : BOOL
 ```
 
@@ -122,7 +122,7 @@ METHOD IsValueDecreased : BOOL
 
 **Прототип:**
 
-```pascal
+```iecst
 METHOD Reset
 ```
 
@@ -136,7 +136,7 @@ METHOD Reset
 
 ### Базовое обнаружение изменений
 
-```pascal
+```iecst
 PROGRAM PRG_Main
 VAR
     fbChangeDetector : FB_NumericChangeDetector;
@@ -160,7 +160,7 @@ END_IF
 
 ### Мониторинг уставок
 
-```pascal
+```iecst
 VAR
     fbSetpointMonitor : FB_NumericChangeDetector;
     rSetpoint : REAL;             // Уставка от HMI
@@ -189,7 +189,7 @@ END_IF
 
 ### Обнаружение скачков значений
 
-```pascal
+```iecst
 VAR
     fbJumpDetector : FB_NumericChangeDetector;
     rPressure : REAL;             // Давление
@@ -217,7 +217,7 @@ END_IF
 
 ### Контроль стабильности процесса
 
-```pascal
+```iecst
 VAR
     fbStabilityMonitor : FB_NumericChangeDetector;
     rProcessValue : REAL;         // Значение процесса
@@ -248,7 +248,7 @@ END_IF
 
 ### Триггер для архивирования
 
-```pascal
+```iecst
 VAR
     fbArchiveTrigger : FB_NumericChangeDetector;
     rAnalogValue : REAL;          // Аналоговое значение
@@ -273,7 +273,7 @@ END_IF
 
 ### Анализ трендов
 
-```pascal
+```iecst
 VAR
     fbTrendAnalyzer : FB_NumericChangeDetector;
     rMeasurement : REAL;          // Измеренное значение
@@ -319,7 +319,7 @@ END_IF
 
 ### Статистика изменений
 
-```pascal
+```iecst
 // Ведение статистики изменений
 VAR
     nTotalChanges : UINT := 0;    // Общее количество изменений
