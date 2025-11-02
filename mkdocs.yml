@@ -40,7 +40,6 @@ nav:
   - Начало работы: getting-started.md
   - Архитектура: diagram.md
   - Коммуникация: Communication.md
-  - Синтаксис ST: st-syntax-examples.md
   - Сигналы:
     - Дискретные сигналы:
       - signal/discrete/FB_BasicSignal.md
