@@ -284,13 +284,13 @@ a:active {
 }
 
 .md-tabs__link--active {
-  color: var(--github-dark-text-secondary);
-  border-bottom: 2px solid var(--github-dark-accent-blue);
+  color: var(--github-dark-text-primary);
+  border-bottom: 2px solid var(--github-dark-text-secondary);
   opacity: 1;
 }
 
 .md-tabs__link--active:visited {
-  color: var(--github-dark-text-secondary);
+  color: var(--github-dark-text-primary);
 }
 
 /* Buttons */
