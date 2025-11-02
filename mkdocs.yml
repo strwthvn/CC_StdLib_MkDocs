@@ -1,10 +1,11 @@
 site_name: CC_StdLib Documentation
 site_description: Документация библиотеки функциональных блоков IEC ST
-site_author: CC_StdLib Team
+site_author: CyberCode
+site_url: https://strwthvn.github.io/CC_StdLib_MkDocs/
 
 # Repository
-repo_name: CC_StdLib
-repo_url: https://github.com/your-org/CC_StdLib
+repo_name: CC_StdLib_MkDocs
+repo_url: https://github.com/strwthvn/CC_StdLib_MkDocs
 
 # Theme
 theme:
