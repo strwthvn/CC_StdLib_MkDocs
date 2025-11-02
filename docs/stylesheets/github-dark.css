@@ -270,27 +270,32 @@ a:active {
 }
 
 .md-tabs__link {
-  color: var(--github-dark-accent-blue);
+  color: var(--github-dark-accent-blue) !important;
   opacity: 1;
 }
 
 .md-tabs__link:visited {
-  color: var(--github-dark-accent-blue);
+  color: var(--github-dark-accent-blue) !important;
 }
 
 .md-tabs__link:hover {
-  color: var(--github-dark-accent-blue);
+  color: var(--github-dark-accent-blue) !important;
   opacity: 0.8;
 }
 
-.md-tabs__link--active {
-  color: var(--github-dark-text-primary);
-  border-bottom: 2px solid var(--github-dark-text-secondary);
-  opacity: 1;
+/* Active tab styling - gray color with gray underline */
+.md-tabs__link--active,
+.md-tabs__link--active:visited,
+.md-tabs__link--active:hover,
+.md-tabs__link--active:focus {
+  color: var(--github-dark-text-primary) !important;
+  border-bottom: 2px solid var(--github-dark-text-secondary) !important;
+  opacity: 1 !important;
 }
 
-.md-tabs__link--active:visited {
-  color: var(--github-dark-text-primary);
+/* Ensure parent item doesn't override active link color */
+.md-tabs__item--active .md-tabs__link {
+  color: var(--github-dark-text-primary) !important;
 }
 
 /* Buttons */
