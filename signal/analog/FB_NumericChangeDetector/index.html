@@ -1,0 +1,2257 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация библиотеки функциональных блоков IEC ST">
+      
+      
+        <meta name="author" content="CyberCode">
+      
+      
+        <link rel="canonical" href="https://strwthvn.github.io/CC_StdLib_MkDocs/signal/analog/FB_NumericChangeDetector/">
+      
+      
+        <link rel="prev" href="../FB_UniversalAnalogSignal/">
+      
+      
+        <link rel="next" href="../FB_RangeDiagnostic_LH/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>FB_NumericChangeDetector - CC_StdLib Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/github-dark.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fb_numericchangedetector" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="CC_StdLib Documentation" class="md-header__button md-logo" aria-label="CC_StdLib Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CC_StdLib Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FB_NumericChangeDetector
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Начало работы
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../diagram/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Архитектура
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Communication/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Коммуникация
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../discrete/FB_BasicSignal/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Сигналы
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mechanism/FB_AbstractMechanism/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Механизмы
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../control/FB_BasicControl/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Управление
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CC_StdLib Documentation" class="md-nav__button md-logo" aria-label="CC_StdLib Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CC_StdLib Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Главная
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Начало работы
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Архитектура
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Коммуникация
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Сигналы
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Сигналы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Дискретные сигналы
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Дискретные сигналы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_BasicSignal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_BasicSignal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_SignalWithFeedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_SignalWithFeedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_SignalWithFeedbackTimer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_SignalWithFeedbackTimer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_SignalWithRattling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_SignalWithRattling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_SignalWithTrigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_SignalWithTrigger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../discrete/FB_FrequencyControl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Аналоговые сигналы
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Аналоговые сигналы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FB_BasicAnalogSignal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_BasicAnalogSignal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FB_AnalogSignal4_20mA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_AnalogSignal4_20mA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FB_UniversalAnalogSignal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_UniversalAnalogSignal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FB_NumericChangeDetector
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_NumericChangeDetector
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обзор
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Обзор">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назначение
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Интерфейс функционального блока
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интерфейс функционального блока">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Входные параметры (VAR_INPUT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выходные параметры (VAR_OUTPUT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      Внутренние переменные (VAR)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Принцип работы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Методы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetCurrentValue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpreviousvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetPreviousValue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvaluedifference" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetValueDifference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalueincreased" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsValueIncreased
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvaluedecreased" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsValueDecreased
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типовые сценарии использования
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Типовые сценарии использования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовое обнаружение изменений
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Мониторинг уставок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обнаружение скачков значений
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Контроль стабильности процесса
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Триггер для архивирования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Анализ трендов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагностические возможности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагностические возможности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Состояния блока
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Статистика изменений
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примечания
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FB_RangeDiagnostic_LH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_RangeDiagnostic_LH
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Механизмы
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Механизмы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mechanism/FB_AbstractMechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_AbstractMechanism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mechanism/FB_Mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_Mechanism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mechanism/FB_MechanismWithFeedback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_MechanismWithFeedback
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Управление
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Управление
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../control/FB_BasicControl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_BasicControl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../control/FB_FrequencyControl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обзор
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Обзор">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назначение
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Интерфейс функционального блока
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Интерфейс функционального блока">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var_input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Входные параметры (VAR_INPUT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выходные параметры (VAR_OUTPUT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      Внутренние переменные (VAR)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Принцип работы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Методы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Методы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetCurrentValue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpreviousvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetPreviousValue
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvaluedifference" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetValueDifference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvalueincreased" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsValueIncreased
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvaluedecreased" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsValueDecreased
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reset
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типовые сценарии использования
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Типовые сценарии использования">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовое обнаружение изменений
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Мониторинг уставок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Обнаружение скачков значений
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Контроль стабильности процесса
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Триггер для архивирования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Анализ трендов
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Диагностические возможности
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Диагностические возможности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Состояния блока
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Статистика изменений
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примечания
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/strwthvn/CC_StdLib_MkDocs/edit/master/docs/signal/analog/FB_NumericChangeDetector.md" title="Редактировать страницу" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fb_numericchangedetector">FB_NumericChangeDetector<a class="headerlink" href="#fb_numericchangedetector" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Обзор<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">Назначение<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Функциональный блок <code>FB_NumericChangeDetector</code> предназначен для обнаружения изменений числовых значений. Блок отслеживает входное значение типа REAL и генерирует импульсный сигнал при каждом изменении значения, а также предоставляет информацию о характере изменения (увеличение/уменьшение) и величине изменения.</p>
+<h2 id="_3">Интерфейс функционального блока<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="var_input">Входные параметры (VAR_INPUT)<a class="headerlink" href="#var_input" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип данных</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>irValue</code></td>
+<td><code>REAL</code></td>
+<td>Входное числовое значение для мониторинга</td>
+</tr>
+</tbody>
+</table>
+<h3 id="var_output">Выходные параметры (VAR_OUTPUT)<a class="headerlink" href="#var_output" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип данных</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qxChangeDetected</code></td>
+<td><code>BOOL</code></td>
+<td>Импульс при обнаружении изменения значения</td>
+</tr>
+</tbody>
+</table>
+<h3 id="var">Внутренние переменные (VAR)<a class="headerlink" href="#var" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Переменная</th>
+<th>Тип данных</th>
+<th>По умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_rPreviousValue</code></td>
+<td><code>REAL</code></td>
+<td>0.0</td>
+<td>Предыдущее значение для сравнения</td>
+</tr>
+<tr>
+<td><code>_xFirstCycle</code></td>
+<td><code>BOOL</code></td>
+<td>TRUE</td>
+<td>Флаг первого цикла выполнения</td>
+</tr>
+<tr>
+<td><code>_rt_Change</code></td>
+<td><code>R_TRIG</code></td>
+<td>-</td>
+<td>Триггер для генерации импульса</td>
+</tr>
+<tr>
+<td><code>_xValueChanged</code></td>
+<td><code>BOOL</code></td>
+<td>FALSE</td>
+<td>Внутренний флаг изменения</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">Принцип работы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Инициализация</strong>: В первом цикле выполнения блок сохраняет входное значение как предыдущее без генерации импульса</li>
+<li><strong>Сравнение</strong>: В каждом последующем цикле текущее значение сравнивается с предыдущим</li>
+<li><strong>Обнаружение изменения</strong>: При обнаружении различия устанавливается внутренний флаг изменения</li>
+<li><strong>Генерация импульса</strong>: Через R_TRIG формируется импульс длительностью в один цикл на выходе <code>qxChangeDetected</code></li>
+<li><strong>Обновление</strong>: Текущее значение сохраняется как предыдущее для следующего цикла</li>
+</ol>
+<h2 id="_5">Методы<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="getcurrentvalue">GetCurrentValue<a class="headerlink" href="#getcurrentvalue" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Возвращает текущее отслеживаемое значение.</p>
+<p><strong>Прототип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">GetCurrentValue</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span>
+</span></code></pre></div>
+<p><strong>Возвращаемое значение:</strong> Текущее входное значение <code>irValue</code></p>
+<hr />
+<h3 id="getpreviousvalue">GetPreviousValue<a class="headerlink" href="#getpreviousvalue" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Возвращает предыдущее значение, сохраненное в предыдущем цикле.</p>
+<p><strong>Прототип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">GetPreviousValue</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span>
+</span></code></pre></div>
+<p><strong>Возвращаемое значение:</strong> Значение из предыдущего цикла сканирования</p>
+<hr />
+<h3 id="getvaluedifference">GetValueDifference<a class="headerlink" href="#getvaluedifference" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Вычисляет разность между текущим и предыдущим значением.</p>
+<p><strong>Прототип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">GetValueDifference</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span>
+</span></code></pre></div>
+<p><strong>Возвращаемое значение:</strong> 
+- Положительное значение = увеличение
+- Отрицательное значение = уменьшение<br />
+- Ноль = нет изменения</p>
+<hr />
+<h3 id="isvalueincreased">IsValueIncreased<a class="headerlink" href="#isvalueincreased" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Проверяет, произошло ли увеличение значения в текущем цикле.</p>
+<p><strong>Прототип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">IsValueIncreased</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span>
+</span></code></pre></div>
+<p><strong>Возвращаемое значение:</strong>
+- TRUE = значение увеличилось
+- FALSE = значение не изменилось или уменьшилось</p>
+<hr />
+<h3 id="isvaluedecreased">IsValueDecreased<a class="headerlink" href="#isvaluedecreased" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Проверяет, произошло ли уменьшение значения в текущем цикле.</p>
+<p><strong>Prototип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">IsValueDecreased</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span>
+</span></code></pre></div>
+<p><strong>Возвращаемое значение:</strong>
+- TRUE = значение уменьшилось
+- FALSE = значение не изменилось или увеличилось</p>
+<hr />
+<h3 id="reset">Reset<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h3>
+<p><strong>Описание:</strong> Сбрасывает детектор изменений в начальное состояние.</p>
+<p><strong>Прототип:</strong></p>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">METHOD</span><span class="w"> </span><span class="n">Reset</span>
+</span></code></pre></div>
+<p><strong>Функциональность:</strong>
+- Устанавливает предыдущее значение равным текущему
+- Активирует флаг первого цикла
+- Сбрасывает внутренние флаги и триггеры
+- Сбрасывает выходной импульс</p>
+<h2 id="_6">Типовые сценарии использования<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Базовое обнаружение изменений<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">PROGRAM</span><span class="w"> </span><span class="n">PRG_Main</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">VAR</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">fbChangeDetector</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">rTemperature</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Температура от датчика</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">xTempChanged</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Флаг изменения температуры</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">rTempDelta</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">            </span><span class="c1">// Величина изменения</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kd">END_VAR</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">// Мониторинг изменений температуры</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nf">fbChangeDetector</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rTemperature</span><span class="p">);</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">xTempChanged</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbChangeDetector</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="p">;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">IF</span><span class="w"> </span><span class="n">xTempChanged</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="n">rTempDelta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbChangeDetector</span><span class="o">.</span><span class="n">GetValueDifference</span><span class="p">();</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">    </span><span class="c1">// Логирование изменения</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nf">LogTemperatureChange</span><span class="p">(</span><span class="n">rTemperature</span><span class="p">,</span><span class="w"> </span><span class="n">rTempDelta</span><span class="p">);</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h3 id="_8">Мониторинг уставок<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">VAR</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">fbSetpointMonitor</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">rSetpoint</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">             </span><span class="c1">// Уставка от HMI</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">xSetpointChanged</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">      </span><span class="c1">// Изменение уставки</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">rOldSetpoint</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Предыдущая уставка</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="n">rNewSetpoint</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Новая уставка</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="kd">END_VAR</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nf">fbSetpointMonitor</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rSetpoint</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">xSetpointChanged</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbSetpointMonitor</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="p">;</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">IF</span><span class="w"> </span><span class="n">xSetpointChanged</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="n">rOldSetpoint</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbSetpointMonitor</span><span class="o">.</span><span class="n">GetPreviousValue</span><span class="p">();</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="n">rNewSetpoint</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbSetpointMonitor</span><span class="o">.</span><span class="n">GetCurrentValue</span><span class="p">();</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="c1">// Архивирование изменения уставки</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="nf">ArchiveSetpointChange</span><span class="p">(</span><span class="n">rOldSetpoint</span><span class="p">,</span><span class="w"> </span><span class="n">rNewSetpoint</span><span class="p">,</span><span class="w"> </span><span class="kt">TIME</span><span class="p">());</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="c1">// Уведомление оператора</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="nf">AddAlarmMessage</span><span class="p">(</span><span class="s">&#39;Setpoint changed from &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">                   </span><span class="nf">REAL_TO_STRING</span><span class="p">(</span><span class="n">rOldSetpoint</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#39; to &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">                   </span><span class="nf">REAL_TO_STRING</span><span class="p">(</span><span class="n">rNewSetpoint</span><span class="p">));</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h3 id="_9">Обнаружение скачков значений<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">VAR</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">fbJumpDetector</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">rPressure</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">             </span><span class="c1">// Давление</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">rJumpThreshold</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">5.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Порог скачка</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">xJumpDetected</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">         </span><span class="c1">// Обнаружен скачок</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">xSignalStable</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">         </span><span class="c1">// Сигнал стабилен</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kd">END_VAR</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nf">fbJumpDetector</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rPressure</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">IF</span><span class="w"> </span><span class="n">fbJumpDetector</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="c1">// Проверка на скачок значения</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="kc">ABS</span><span class="p">(</span><span class="n">fbJumpDetector</span><span class="o">.</span><span class="n">GetValueDifference</span><span class="p">())</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">rJumpThreshold</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="n">xJumpDetected</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="n">xSignalStable</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">;</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">        </span><span class="c1">// Диагностика возможной неисправности датчика</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">        </span><span class="nf">AddDiagnosticMessage</span><span class="p">(</span><span class="s">&#39;Pressure sensor: sudden value jump detected&#39;</span><span class="p">);</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">    </span><span class="k">ELSE</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">        </span><span class="n">xSignalStable</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">        </span><span class="n">xJumpDetected</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">;</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h3 id="_10">Контроль стабильности процесса<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">VAR</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">fbStabilityMonitor</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">rProcessValue</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">         </span><span class="c1">// Значение процесса</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">tonStabilityTimer</span><span class="w"> </span><span class="p">: </span><span class="nc">TON</span><span class="p">;</span><span class="w">      </span><span class="c1">// Таймер стабильности</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="n">tStabilityTime</span><span class="w"> </span><span class="p">: </span><span class="kt">TIME</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="m">T#30S</span><span class="p">;</span><span class="w"> </span><span class="c1">// Время для стабильности</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="n">xProcessStable</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">        </span><span class="c1">// Процесс стабилен</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">nChangeCount</span><span class="w"> </span><span class="p">: </span><span class="kt">UINT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">     </span><span class="c1">// Количество изменений</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="kd">END_VAR</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nf">fbStabilityMonitor</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rProcessValue</span><span class="p">);</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">// Сброс таймера при каждом изменении</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">IF</span><span class="w"> </span><span class="n">fbStabilityMonitor</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="nf">tonStabilityTimer</span><span class="p">(</span><span class="n">IN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">);</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="nf">tonStabilityTimer</span><span class="p">(</span><span class="n">IN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">PT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">tStabilityTime</span><span class="p">);</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">nChangeCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">nChangeCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="k">END_IF</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c1">// Определение стабильности</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="nf">tonStabilityTimer</span><span class="p">();</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="n">xProcessStable</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">tonStabilityTimer</span><span class="o">.</span><span class="n">Q</span><span class="p">;</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="c1">// Сброс счетчика изменений при достижении стабильности</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="k">IF</span><span class="w"> </span><span class="n">xProcessStable</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">    </span><span class="n">nChangeCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h3 id="_11">Триггер для архивирования<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">VAR</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">fbArchiveTrigger</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">rAnalogValue</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Аналоговое значение</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="n">xArchiveNow</span><span class="w"> </span><span class="p">: </span><span class="kt">BOOL</span><span class="p">;</span><span class="w">           </span><span class="c1">// Триггер архивирования</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">tLastArchive</span><span class="w"> </span><span class="p">: </span><span class="kt">TIME</span><span class="p">;</span><span class="w">          </span><span class="c1">// Время последнего архивирования</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">tMinArchiveInterval</span><span class="w"> </span><span class="p">: </span><span class="kt">TIME</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="m">T#1M</span><span class="p">;</span><span class="w"> </span><span class="c1">// Минимальный интервал</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kd">END_VAR</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nf">fbArchiveTrigger</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rAnalogValue</span><span class="p">);</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1">// Архивирование при изменении с ограничением частоты</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="k">IF</span><span class="w"> </span><span class="n">fbArchiveTrigger</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="kt">TIME</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tLastArchive</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">tMinArchiveInterval</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">        </span><span class="n">xArchiveNow</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">        </span><span class="n">tLastArchive</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kt">TIME</span><span class="p">();</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="c1">// Добавление записи в архив</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">        </span><span class="nf">ArchiveValue</span><span class="p">(</span><span class="n">rAnalogValue</span><span class="p">,</span><span class="w"> </span><span class="kt">TIME</span><span class="p">());</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h3 id="_12">Анализ трендов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">VAR</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">fbTrendAnalyzer</span><span class="w"> </span><span class="p">: </span><span class="nc">FB_NumericChangeDetector</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">rMeasurement</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">          </span><span class="c1">// Измеренное значение</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">nIncreaseCount</span><span class="w"> </span><span class="p">: </span><span class="kt">UINT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Счетчик увеличений</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">nDecreaseCount</span><span class="w"> </span><span class="p">: </span><span class="kt">UINT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Счетчик уменьшений</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">eTrendDirection</span><span class="w"> </span><span class="p">: </span><span class="nc">E_TrendDirection</span><span class="p">;</span><span class="w"> </span><span class="c1">// Направление тренда</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="kd">END_VAR</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nf">fbTrendAnalyzer</span><span class="p">(</span><span class="n">irValue</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rMeasurement</span><span class="p">);</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">IF</span><span class="w"> </span><span class="n">fbTrendAnalyzer</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">fbTrendAnalyzer</span><span class="o">.</span><span class="n">IsValueIncreased</span><span class="p">()</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="n">nIncreaseCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">nIncreaseCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="n">nDecreaseCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Сброс счетчика противоположного направления</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="k">ELSIF</span><span class="w"> </span><span class="n">fbTrendAnalyzer</span><span class="o">.</span><span class="n">IsValueDecreased</span><span class="p">()</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="n">nDecreaseCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">nDecreaseCount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="n">nIncreaseCount</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Сброс счетчика противоположного направления</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="c1">// Определение тренда</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">nIncreaseCount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="n">eTrendDirection</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">E_TrendDirection</span><span class="o">.</span><span class="n">Rising</span><span class="p">;</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="k">ELSIF</span><span class="w"> </span><span class="n">nDecreaseCount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">        </span><span class="n">eTrendDirection</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">E_TrendDirection</span><span class="o">.</span><span class="n">Falling</span><span class="p">;</span>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">    </span><span class="k">ELSE</span>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">        </span><span class="n">eTrendDirection</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">E_TrendDirection</span><span class="o">.</span><span class="n">Stable</span><span class="p">;</span>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h2 id="_13">Диагностические возможности<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">Состояния блока<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Состояние</th>
+<th>Метод/Выход</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Изменение обнаружено</td>
+<td><code>qxChangeDetected</code></td>
+<td>Импульс при любом изменении</td>
+</tr>
+<tr>
+<td>Текущее значение</td>
+<td><code>GetCurrentValue()</code></td>
+<td>Актуальное входное значение</td>
+</tr>
+<tr>
+<td>Предыдущее значение</td>
+<td><code>GetPreviousValue()</code></td>
+<td>Значение из предыдущего цикла</td>
+</tr>
+<tr>
+<td>Величина изменения</td>
+<td><code>GetValueDifference()</code></td>
+<td>Разность между значениями</td>
+</tr>
+<tr>
+<td>Увеличение</td>
+<td><code>IsValueIncreased()</code></td>
+<td>Значение возросло</td>
+</tr>
+<tr>
+<td>Уменьшение</td>
+<td><code>IsValueDecreased()</code></td>
+<td>Значение уменьшилось</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">Статистика изменений<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Ведение статистики изменений</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">VAR</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">nTotalChanges</span><span class="w"> </span><span class="p">: </span><span class="kt">UINT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">    </span><span class="c1">// Общее количество изменений</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">rMaxIncrease</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Максимальное увеличение</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">rMaxDecrease</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Максимальное уменьшение</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="n">rAverageChange</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span><span class="w">        </span><span class="c1">// Среднее изменение</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="n">rTotalChange</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Сумма всех изменений</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="kd">END_VAR</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">IF</span><span class="w"> </span><span class="n">fbChangeDetector</span><span class="o">.</span><span class="n">qxChangeDetected</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="kd">VAR</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="n">rChange</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">    </span><span class="kd">END_VAR</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="n">rChange</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">fbChangeDetector</span><span class="o">.</span><span class="n">GetValueDifference</span><span class="p">();</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="n">nTotalChanges</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">nTotalChanges</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="n">rTotalChange</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rTotalChange</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kc">ABS</span><span class="p">(</span><span class="n">rChange</span><span class="p">);</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="c1">// Отслеживание экстремумов</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">rChange</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">rMaxIncrease</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">        </span><span class="n">rMaxIncrease</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rChange</span><span class="p">;</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">rChange</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rMaxDecrease</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">        </span><span class="n">rMaxDecrease</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rChange</span><span class="p">;</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">    </span><span class="c1">// Расчет среднего изменения</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">nTotalChanges</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">        </span><span class="n">rAverageChange</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rTotalChange</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nTotalChanges</span><span class="p">;</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">    </span><span class="k">END_IF</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="k">END_IF</span>
+</span></code></pre></div>
+<h2 id="_16">Примечания<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Блок обнаруживает любые изменения значения, включая очень малые</li>
+<li>Импульс <code>qxChangeDetected</code> длится только один цикл сканирования</li>
+<li>Для работы с зашумленными сигналами рекомендуется предварительная фильтрация</li>
+<li>Блок не накапливает историю изменений - доступны только текущее и предыдущее значения</li>
+<li>При работе с значениями с плавающей точкой учитывайте особенности их представления</li>
+<li>Рекомендуется периодически анализировать статистику изменений для оптимизации параметров системы</li>
+<li>Блок эффективен для создания событийно-ориентированных систем архивирования и логирования</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../FB_UniversalAnalogSignal/" class="md-footer__link md-footer__link--prev" aria-label="Назад: FB_UniversalAnalogSignal">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                FB_UniversalAnalogSignal
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../FB_RangeDiagnostic_LH/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FB_RangeDiagnostic_LH">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                FB_RangeDiagnostic_LH
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.path", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,878 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Документация библиотеки функциональных блоков IEC ST" name="description"/>
+<meta content="CyberCode" name="author"/>
+<link href="https://strwthvn.github.io/CC_StdLib_MkDocs/diagrams/communication-diagram/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Диаграмма: Коммуникация и преобразования данных - CC_StdLib Documentation</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/github-dark.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="blue-grey" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Перейти к содержанию
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="CC_StdLib Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="CC_StdLib Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            CC_StdLib Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Диаграмма: Коммуникация и преобразования данных
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<a aria-label="Поделиться" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Поделиться">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../getting-started/">
+        
+  
+  
+    
+  
+  Начало работы
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../diagram/">
+        
+  
+  
+    
+  
+  Архитектура
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Communication/">
+        
+  
+  
+    
+  
+  Коммуникация
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../signal/discrete/FB_BasicSignal/">
+          
+  
+  
+    
+  
+  Сигналы
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../mechanism/FB_AbstractMechanism/">
+          
+  
+  
+    
+  
+  Механизмы
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../control/FB_BasicControl/">
+          
+  
+  
+    
+  
+  Управление
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CC_StdLib Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="CC_StdLib Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    CC_StdLib Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Главная
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/">
+<span class="md-ellipsis">
+    Начало работы
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../diagram/">
+<span class="md-ellipsis">
+    Архитектура
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Communication/">
+<span class="md-ellipsis">
+    Коммуникация
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Дискретные сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+            Дискретные сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_BasicSignal/">
+<span class="md-ellipsis">
+    FB_BasicSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithFeedback/">
+<span class="md-ellipsis">
+    FB_SignalWithFeedback
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithFeedbackTimer/">
+<span class="md-ellipsis">
+    FB_SignalWithFeedbackTimer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithRattling/">
+<span class="md-ellipsis">
+    FB_SignalWithRattling
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithTrigger/">
+<span class="md-ellipsis">
+    FB_SignalWithTrigger
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_FrequencyControl/">
+<span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Аналоговые сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Аналоговые сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_BasicAnalogSignal/">
+<span class="md-ellipsis">
+    FB_BasicAnalogSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_AnalogSignal4_20mA/">
+<span class="md-ellipsis">
+    FB_AnalogSignal4_20mA
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_UniversalAnalogSignal/">
+<span class="md-ellipsis">
+    FB_UniversalAnalogSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_NumericChangeDetector/">
+<span class="md-ellipsis">
+    FB_NumericChangeDetector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_RangeDiagnostic_LH/">
+<span class="md-ellipsis">
+    FB_RangeDiagnostic_LH
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Механизмы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Механизмы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_AbstractMechanism/">
+<span class="md-ellipsis">
+    FB_AbstractMechanism
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_Mechanism/">
+<span class="md-ellipsis">
+    FB_Mechanism
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_MechanismWithFeedback/">
+<span class="md-ellipsis">
+    FB_MechanismWithFeedback
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Управление
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Управление
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../control/FB_BasicControl/">
+<span class="md-ellipsis">
+    FB_BasicControl
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../control/FB_FrequencyControl/">
+<span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      Утилиты для обмена данными
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      Описание компонентов
+    </span>
+</a>
+<nav aria-label="Описание компонентов" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#union">
+<span class="md-ellipsis">
+      Объединения (UNION)
+    </span>
+</a>
+<nav aria-label="Объединения (UNION)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#u_bytetoword">
+<span class="md-ellipsis">
+      U_ByteToWord
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#u_realtoword">
+<span class="md-ellipsis">
+      U_RealToWord
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      Функции преобразования
+    </span>
+</a>
+<nav aria-label="Функции преобразования" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fc_swapbytesinword">
+<span class="md-ellipsis">
+      FC_SwapBytesInWord
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fc_swapbytesinwordarray">
+<span class="md-ellipsis">
+      FC_SwapBytesInWordArray
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fc_swapwordarrayelements">
+<span class="md-ellipsis">
+      FC_SwapWordArrayElements
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      Типовые сценарии использования
+    </span>
+</a>
+<nav aria-label="Типовые сценарии использования" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-real-modbus">
+<span class="md-ellipsis">
+      1. Обмен REAL через Modbus
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      2. Обработка данных с разным порядком байтов
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      3. Работа с отдельными байтами
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      Поддерживаемые протоколы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      Связанные разделы
+    </span>
+</a>
+<nav aria-label="Связанные разделы" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      Коммуникация
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      Аналоговые сигналы для протоколов
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      Управление устройствами
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      Другие диаграммы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      Документация
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      Навигация
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/strwthvn/CC_StdLib_MkDocs/edit/master/docs/diagrams/communication-diagram.md" rel="edit" title="Редактировать страницу">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="_1">Диаграмма: Коммуникация и преобразования данных<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<style>
+.diagram-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #1e1e1e;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.mermaid {
+    width: 100%;
+    min-width: 600px;
+}
+</style>
+<h2 id="_2">Утилиты для обмена данными<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="diagram-container">
+<pre class="mermaid"><code>---
+config:
+  theme: dark
+  themeVariables:
+    background: '#0d1117'
+    primaryColor: '#161b22'
+    primaryTextColor: '#e6edf3'
+    primaryBorderColor: '#30363d'
+    lineColor: '#58a6ff'
+    secondaryColor: '#21262d'
+    tertiaryColor: '#161b22'
+    classText: '#e6edf3'
+    cScale0: '#21262d'
+    cScale1: '#21262d'
+    cScale2: '#21262d'
+---
+classDiagram
+direction TB
+    class U_ByteToWord {
+        +WORD wTag
+        +ARRAY[0..1] OF BYTE bTag
+        +Convert()
+    }
+
+    class U_RealToWord {
+        +ARRAY[0..1] OF WORD wTag
+        +REAL rTag
+        +Convert()
+    }
+
+    class FC_SwapBytesInWord {
+        +FC_SwapBytesInWord(wInputValue : WORD) WORD
+    }
+
+    class FC_SwapBytesInWordArray {
+        +FC_SwapBytesInWordArray(awInputArray : ARRAY[0..1] OF WORD) ARRAY[0..1] OF WORD
+    }
+
+    class FC_SwapWordArrayElements {
+        +FC_SwapWordArrayElements(awInputArray : ARRAY[0..1] OF WORD) ARRAY[0..1] OF WORD
+    }
+
+    FC_SwapBytesInWord ..&gt; U_ByteToWord : uses
+    FC_SwapBytesInWordArray ..&gt; U_ByteToWord : uses
+
+    &lt;&lt;union&gt;&gt; U_ByteToWord
+    &lt;&lt;union&gt;&gt; U_RealToWord
+    &lt;&lt;function&gt;&gt; FC_SwapBytesInWord
+    &lt;&lt;function&gt;&gt; FC_SwapBytesInWordArray
+    &lt;&lt;function&gt;&gt; FC_SwapWordArrayElements</code></pre>
+</div>
+<h2 id="_3">Описание компонентов<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="union">Объединения (UNION)<a class="headerlink" href="#union" title="Permanent link">¶</a></h3>
+<h4 id="u_bytetoword">U_ByteToWord<a class="headerlink" href="#u_bytetoword" title="Permanent link">¶</a></h4>
+<p>Преобразование между WORD (16-бит) и массивом из 2 байтов:
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">TYPE</span><span class="w"> </span><span class="n">U_ByteToWord</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nc">UNION</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">wTag</span><span class="p">: </span><span class="kt">WORD</span><span class="p">;</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">bTag</span><span class="p">: </span><span class="nc">ARRAY</span><span class="w"> </span><span class="p">[</span><span class="mf">0..1</span><span class="p">]</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="kt">BYTE</span><span class="p">;</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">END_UNION</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kn">END_TYPE</span>
+</span></code></pre></div></p>
+<p><strong>Применение:</strong>
+- Разбор WORD на отдельные байты
+- Сборка WORD из двух байтов
+- Работа с младшим и старшим байтами</p>
+<h4 id="u_realtoword">U_RealToWord<a class="headerlink" href="#u_realtoword" title="Permanent link">¶</a></h4>
+<p>Преобразование между REAL (32-бит) и массивом из 2 WORD:
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">TYPE</span><span class="w"> </span><span class="n">U_RealToWord</span><span class="w"> </span><span class="p">:</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nc">UNION</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">wTag</span><span class="p">: </span><span class="nc">ARRAY</span><span class="w"> </span><span class="p">[</span><span class="mf">0..1</span><span class="p">]</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="kt">WORD</span><span class="p">;</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">rTag</span><span class="p">: </span><span class="kt">REAL</span><span class="p">;</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">END_UNION</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">END_TYPE</span>
+</span></code></pre></div></p>
+<p><strong>Применение:</strong>
+- Передача REAL значений через Modbus (2 регистра)
+- Преобразование IEEE 754 в целочисленное представление
+- Низкоуровневый доступ к битам числа с плавающей точкой</p>
+<h3 id="_4">Функции преобразования<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h4 id="fc_swapbytesinword">FC_SwapBytesInWord<a class="headerlink" href="#fc_swapbytesinword" title="Permanent link">¶</a></h4>
+<p>Меняет местами байты в WORD (Little-endian ↔ Big-endian):
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-2-1"><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Input</span><span class="p">:</span><span class="w">  </span><span class="mh">16#1234</span>
+</span><span id="__span-2-2"><a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">Output</span><span class="p">:</span><span class="w"> </span><span class="mh">16#3412</span>
+</span></code></pre></div></p>
+<p><strong>Использование:</strong>
+- Протоколы с разным порядком байтов
+- Ethernet/IP, Profinet (Big-endian)
+- Modbus RTU/ASCII (Little-endian)</p>
+<h4 id="fc_swapbytesinwordarray">FC_SwapBytesInWordArray<a class="headerlink" href="#fc_swapbytesinwordarray" title="Permanent link">¶</a></h4>
+<p>Применяет операцию смены байтов к каждому элементу массива WORD:
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-3-1"><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">Input</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="mh">16#1234</span><span class="p">,</span><span class="w"> </span><span class="mh">16#5678</span><span class="p">]</span>
+</span><span id="__span-3-2"><a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Output</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mh">16#3412</span><span class="p">,</span><span class="w"> </span><span class="mh">16#7856</span><span class="p">]</span>
+</span></code></pre></div></p>
+<h4 id="fc_swapwordarrayelements">FC_SwapWordArrayElements<a class="headerlink" href="#fc_swapwordarrayelements" title="Permanent link">¶</a></h4>
+<p>Меняет местами элементы массива WORD:
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-4-1"><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">Input</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="mh">16#1234</span><span class="p">,</span><span class="w"> </span><span class="mh">16#5678</span><span class="p">]</span>
+</span><span id="__span-4-2"><a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">Output</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mh">16#5678</span><span class="p">,</span><span class="w"> </span><span class="mh">16#1234</span><span class="p">]</span>
+</span></code></pre></div></p>
+<h2 id="_5">Типовые сценарии использования<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h3 id="1-real-modbus">1. Обмен REAL через Modbus<a class="headerlink" href="#1-real-modbus" title="Permanent link">¶</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-5-1"><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">VAR</span>
+</span><span id="__span-5-2"><a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="n">uRealConverter</span><span class="w"> </span><span class="p">: </span><span class="nc">U_RealToWord</span><span class="p">;</span>
+</span><span id="__span-5-3"><a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">awModbusRegisters</span><span class="w"> </span><span class="p">: </span><span class="nc">ARRAY</span><span class="w"> </span><span class="p">[</span><span class="mf">0..1</span><span class="p">]</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="kt">WORD</span><span class="p">;</span>
+</span><span id="__span-5-4"><a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="n">rTemperature</span><span class="w"> </span><span class="p">: </span><span class="kt">REAL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mf">25.6</span><span class="p">;</span>
+</span><span id="__span-5-5"><a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kd">END_VAR</span>
+</span><span id="__span-5-6"><a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1">// Отправка REAL значения</span>
+</span><span id="__span-5-8"><a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="n">uRealConverter</span><span class="o">.</span><span class="n">rTag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">rTemperature</span><span class="p">;</span>
+</span><span id="__span-5-9"><a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">awModbusRegisters</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nf">FC_SwapWordArrayElements</span><span class="p">(</span><span class="n">uRealConverter</span><span class="o">.</span><span class="n">wTag</span><span class="p">);</span>
+</span><span id="__span-5-10"><a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1">// Прием REAL значения  </span>
+</span><span id="__span-5-12"><a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="n">uRealConverter</span><span class="o">.</span><span class="n">wTag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nf">FC_SwapWordArrayElements</span><span class="p">(</span><span class="n">awModbusRegisters</span><span class="p">);</span>
+</span><span id="__span-5-13"><a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="n">rTemperature</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uRealConverter</span><span class="o">.</span><span class="n">rTag</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="2">2. Обработка данных с разным порядком байтов<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-6-1"><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kd">VAR</span>
+</span><span id="__span-6-2"><a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="n">wEthernetData</span><span class="w"> </span><span class="p">: </span><span class="kt">WORD</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mh">16#1234</span><span class="p">;</span><span class="w">  </span><span class="c1">// Big-endian из сети</span>
+</span><span id="__span-6-3"><a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">wPLCData</span><span class="w"> </span><span class="p">: </span><span class="kt">WORD</span><span class="p">;</span><span class="w">                  </span><span class="c1">// Little-endian для ПЛК</span>
+</span><span id="__span-6-4"><a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kd">END_VAR</span>
+</span><span id="__span-6-5"><a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// Преобразование порядка байтов</span>
+</span><span id="__span-6-7"><a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">wPLCData</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nf">FC_SwapBytesInWord</span><span class="p">(</span><span class="n">wEthernetData</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="3">3. Работа с отдельными байтами<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<div class="language-iecst highlight"><pre><span></span><code><span id="__span-7-1"><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">VAR</span>
+</span><span id="__span-7-2"><a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="n">uByteConverter</span><span class="w"> </span><span class="p">: </span><span class="nc">U_ByteToWord</span><span class="p">;</span>
+</span><span id="__span-7-3"><a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="n">bHighByte</span><span class="p">,</span><span class="w"> </span><span class="n">bLowByte</span><span class="w"> </span><span class="p">: </span><span class="kt">BYTE</span><span class="p">;</span>
+</span><span id="__span-7-4"><a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="n">wResult</span><span class="w"> </span><span class="p">: </span><span class="kt">WORD</span><span class="p">;</span>
+</span><span id="__span-7-5"><a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kd">END_VAR</span>
+</span><span id="__span-7-6"><a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1">// Сборка WORD из байтов</span>
+</span><span id="__span-7-8"><a href="#__codelineno-7-8" id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">uByteConverter</span><span class="o">.</span><span class="n">bTag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">bLowByte</span><span class="p">;</span><span class="w">   </span><span class="c1">// Младший байт</span>
+</span><span id="__span-7-9"><a href="#__codelineno-7-9" id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">uByteConverter</span><span class="o">.</span><span class="n">bTag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">bHighByte</span><span class="p">;</span><span class="w">  </span><span class="c1">// Старший байт</span>
+</span><span id="__span-7-10"><a href="#__codelineno-7-10" id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">wResult</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uByteConverter</span><span class="o">.</span><span class="n">wTag</span><span class="p">;</span>
+</span><span id="__span-7-11"><a href="#__codelineno-7-11" id="__codelineno-7-11" name="__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a href="#__codelineno-7-12" id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="c1">// Разбор WORD на байты</span>
+</span><span id="__span-7-13"><a href="#__codelineno-7-13" id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="n">uByteConverter</span><span class="o">.</span><span class="n">wTag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mh">16#1234</span><span class="p">;</span>
+</span><span id="__span-7-14"><a href="#__codelineno-7-14" id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="n">bLowByte</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uByteConverter</span><span class="o">.</span><span class="n">bTag</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">   </span><span class="c1">// 16#34</span>
+</span><span id="__span-7-15"><a href="#__codelineno-7-15" id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="n">bHighByte</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">uByteConverter</span><span class="o">.</span><span class="n">bTag</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w">  </span><span class="c1">// 16#12</span>
+</span></code></pre></div>
+<h2 id="_6">Поддерживаемые протоколы<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Modbus RTU/TCP</strong>: Работа с регистрами и преобразование REAL</li>
+<li><strong>Ethernet/IP</strong>: Обработка данных с сетевым порядком байтов</li>
+<li><strong>Profinet</strong>: Работа с различными форматами данных</li>
+<li><strong>Custom протоколы</strong>: Гибкое преобразование форматов</li>
+</ul>
+<hr/>
+<h2 id="_7">Связанные разделы<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="_8">Коммуникация<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../Communication/">Communication</a> - Подробное описание коммуникационных возможностей</li>
+</ul>
+<h3 id="_9">Аналоговые сигналы для протоколов<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../signal/analog/FB_AnalogSignal4_20mA/">FB_AnalogSignal4_20mA</a> - Токовая петля для Modbus</li>
+<li><a href="../../signal/analog/FB_UniversalAnalogSignal/">FB_UniversalAnalogSignal</a> - Универсальные аналоговые входы</li>
+</ul>
+<h3 id="_10">Управление устройствами<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../control/FB_BasicControl/">FB_BasicControl</a> - Базовое управление через сеть</li>
+<li><a href="../../control/FB_FrequencyControl/">FB_FrequencyControl</a> - Управление ЧРП через протоколы</li>
+</ul>
+<h3 id="_11">Другие диаграммы<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../signals-diagram/" target="_blank">Обработка сигналов</a></li>
+<li><a href="../mechanisms-diagram/" target="_blank">Механизмы и управление</a></li>
+<li><a href="../../full-diagram/" target="_blank">Полная диаграмма</a></li>
+</ul>
+<h3 id="_12">Документация<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../getting-started/">Начало работы</a> - Примеры интеграции протоколов</li>
+<li><a href="../../diagram/">Архитектура библиотеки</a> - Общий обзор</li>
+</ul>
+<h3 id="_13">Навигация<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p><a href="../../diagram/">Обзор архитектуры</a> | <a href="../../">Главная</a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.path", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>

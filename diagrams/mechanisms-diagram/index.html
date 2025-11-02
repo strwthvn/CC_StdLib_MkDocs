@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Документация библиотеки функциональных блоков IEC ST" name="description"/>
+<meta content="CyberCode" name="author"/>
+<link href="https://strwthvn.github.io/CC_StdLib_MkDocs/diagrams/mechanisms-diagram/" rel="canonical"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Диаграмма: Механизмы и управление - CC_StdLib Documentation</title>
+<link href="../../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/github-dark.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="blue-grey" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Перейти к содержанию
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="CC_StdLib Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="CC_StdLib Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            CC_StdLib Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Диаграмма: Механизмы и управление
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<a aria-label="Поделиться" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Поделиться">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../getting-started/">
+        
+  
+  
+    
+  
+  Начало работы
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../diagram/">
+        
+  
+  
+    
+  
+  Архитектура
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Communication/">
+        
+  
+  
+    
+  
+  Коммуникация
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../signal/discrete/FB_BasicSignal/">
+          
+  
+  
+    
+  
+  Сигналы
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../mechanism/FB_AbstractMechanism/">
+          
+  
+  
+    
+  
+  Механизмы
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../control/FB_BasicControl/">
+          
+  
+  
+    
+  
+  Управление
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="CC_StdLib Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="CC_StdLib Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    CC_StdLib Documentation
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/strwthvn/CC_StdLib_MkDocs" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    CC_StdLib_MkDocs
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Главная
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../getting-started/">
+<span class="md-ellipsis">
+    Начало работы
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../diagram/">
+<span class="md-ellipsis">
+    Архитектура
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Communication/">
+<span class="md-ellipsis">
+    Коммуникация
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    Дискретные сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+            Дискретные сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_BasicSignal/">
+<span class="md-ellipsis">
+    FB_BasicSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithFeedback/">
+<span class="md-ellipsis">
+    FB_SignalWithFeedback
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithFeedbackTimer/">
+<span class="md-ellipsis">
+    FB_SignalWithFeedbackTimer
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithRattling/">
+<span class="md-ellipsis">
+    FB_SignalWithRattling
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_SignalWithTrigger/">
+<span class="md-ellipsis">
+    FB_SignalWithTrigger
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/discrete/FB_FrequencyControl/">
+<span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Аналоговые сигналы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            Аналоговые сигналы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_BasicAnalogSignal/">
+<span class="md-ellipsis">
+    FB_BasicAnalogSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_AnalogSignal4_20mA/">
+<span class="md-ellipsis">
+    FB_AnalogSignal4_20mA
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_UniversalAnalogSignal/">
+<span class="md-ellipsis">
+    FB_UniversalAnalogSignal
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_NumericChangeDetector/">
+<span class="md-ellipsis">
+    FB_NumericChangeDetector
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../signal/analog/FB_RangeDiagnostic_LH/">
+<span class="md-ellipsis">
+    FB_RangeDiagnostic_LH
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Механизмы
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Механизмы
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_AbstractMechanism/">
+<span class="md-ellipsis">
+    FB_AbstractMechanism
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_Mechanism/">
+<span class="md-ellipsis">
+    FB_Mechanism
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mechanism/FB_MechanismWithFeedback/">
+<span class="md-ellipsis">
+    FB_MechanismWithFeedback
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Управление
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Управление
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../control/FB_BasicControl/">
+<span class="md-ellipsis">
+    FB_BasicControl
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../control/FB_FrequencyControl/">
+<span class="md-ellipsis">
+    FB_FrequencyControl
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      Иерархия механизмов и блоки управления
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      Описание компонентов
+    </span>
+</a>
+<nav aria-label="Описание компонентов" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      Базовые механизмы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      Управление
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      Перечисления
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      Принципы использования
+    </span>
+</a>
+<nav aria-label="Принципы использования" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      Наследование
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      Интерфейсы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      Диагностика
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      Связанные разделы
+    </span>
+</a>
+<nav aria-label="Связанные разделы" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      Базовые механизмы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      Управление
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      Сигналы для механизмов
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      Другие диаграммы
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      Навигация
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/strwthvn/CC_StdLib_MkDocs/edit/master/docs/diagrams/mechanisms-diagram.md" rel="edit" title="Редактировать страницу">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<h1 id="_1">Диаграмма: Механизмы и управление<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<style>
+.diagram-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #1e1e1e;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.mermaid {
+    width: 100%;
+    min-width: 600px;
+}
+</style>
+<h2 id="_2">Иерархия механизмов и блоки управления<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="diagram-container">
+<pre class="mermaid"><code>---
+config:
+  theme: dark
+  themeVariables:
+    background: '#0d1117'
+    primaryColor: '#161b22'
+    primaryTextColor: '#e6edf3'
+    primaryBorderColor: '#30363d'
+    lineColor: '#58a6ff'
+    secondaryColor: '#21262d'
+    tertiaryColor: '#161b22'
+    classText: '#e6edf3'
+    cScale0: '#21262d'
+    cScale1: '#21262d'
+    cScale2: '#21262d'
+---
+classDiagram
+direction TB
+    class FB_AbstractMechanism {
+        -BOOL _xPower
+        +SetPower(BOOL)
+        +GetPower() BOOL
+    }
+
+    class FB_Mechanism {
+        +Start()
+        +Stop()
+    }
+
+    class FB_MechanismWithFeedback {
+        +BOOL ixFeedback
+        -E_StateFeedback _uFeedbackState
+        +GetFeedbackWithoutPower() BOOL
+        +GetPowerAndFeedback() BOOL
+        +GetPowerWithoutFeedback() BOOL
+        +GetState() E_StateFeedback
+        #UpdateState()
+    }
+
+    class E_StateFeedback {
+        Inactive
+        Active
+        Error_NoFeedback
+        Error_UnexpectedFeedback
+    }
+
+    class I_Control {
+        +Start()
+        +Stop()
+    }
+
+    class FB_BasicControl {
+        +I_Control ControlInterface
+        -BOOL _xConditionToStart
+        -BOOL _xConditionToStop
+        +SetConditionToStart(BOOL)
+        +SetConditionToStop(BOOL)
+        +Start(BOOL)
+        +Stop(BOOL)
+    }
+
+    class FB_FrequencyControl {
+        +REAL irMaxFrequency
+        +REAL irStep
+        +REAL qrCurrentFrequency
+        +BOOL qxTargetReached
+        -REAL _rSetFrequency
+        -REAL _rCurrentFrequency
+        -BOOL _xInitialized
+        +Calculate(rStep : REAL, xPulse : BOOL, xConditionToProceed : BOOL)
+        +SetFrequencyTarget(rFrequency : REAL)
+        +SetFrequencyDirect(rFrequency : REAL)
+        +GetCurrentFrequency() REAL
+        +GetTargetFrequency() REAL
+        +Reset()
+        +Hold()
+    }
+
+    FB_AbstractMechanism &lt;|-- FB_Mechanism
+    FB_Mechanism &lt;|-- FB_MechanismWithFeedback
+    FB_MechanismWithFeedback o-- E_StateFeedback
+    FB_BasicControl o-- I_Control
+    FB_Mechanism ..|&gt; I_Control : implements
+
+    &lt;&lt;abstract&gt;&gt; FB_AbstractMechanism
+    &lt;&lt;enumeration&gt;&gt; E_StateFeedback
+    &lt;&lt;interface&gt;&gt; I_Control</code></pre>
+</div>
+<h2 id="_3">Описание компонентов<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="_4">Базовые механизмы<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>FB_AbstractMechanism</strong>: Абстрактный базовый класс для всех механизмов</li>
+<li>Управляет состоянием питания устройства</li>
+<li>
+<p>Предоставляет базовую функциональность включения/выключения</p>
+</li>
+<li>
+<p><strong>FB_Mechanism</strong>: Базовая реализация механизма</p>
+</li>
+<li>Реализует интерфейс <code>I_Control</code></li>
+<li>Предоставляет методы <code>Start()</code> и <code>Stop()</code></li>
+<li>
+<p>Наследует управление питанием от базового класса</p>
+</li>
+<li>
+<p><strong>FB_MechanismWithFeedback</strong>: Механизм с диагностикой обратной связи</p>
+</li>
+<li>Расширяет базовый механизм функциями диагностики</li>
+<li>Контролирует соответствие команды и фактического состояния</li>
+<li>Определяет состояния ошибок (нет обратной связи, неожиданная обратная связь)</li>
+</ul>
+<h3 id="_5">Управление<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>I_Control</strong>: Стандартный интерфейс управления</li>
+<li>Унифицирует команды <code>Start()</code> и <code>Stop()</code> для всех устройств</li>
+<li>
+<p>Обеспечивает полиморфизм в системах управления</p>
+</li>
+<li>
+<p><strong>FB_BasicControl</strong>: Базовое управление с условиями</p>
+</li>
+<li>Позволяет задавать условия для запуска и остановки</li>
+<li>
+<p>Реализует логику блокировок и разрешений</p>
+</li>
+<li>
+<p><strong>FB_FrequencyControl</strong>: Управление частотными преобразователями</p>
+</li>
+<li>Плавное изменение частоты с заданным шагом</li>
+<li>Контроль достижения целевой частоты</li>
+<li>Функции удержания и сброса</li>
+</ul>
+<h3 id="_6">Перечисления<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>E_StateFeedback</strong>: Состояния обратной связи механизмов</li>
+<li><code>Inactive</code>: Механизм неактивен</li>
+<li><code>Active</code>: Механизм работает нормально</li>
+<li><code>Error_NoFeedback</code>: Ошибка - нет обратной связи при команде запуска</li>
+<li><code>Error_UnexpectedFeedback</code>: Ошибка - есть обратная связь при команде остановки</li>
+</ul>
+<h2 id="_7">Принципы использования<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="_8">Наследование<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>Все механизмы наследуют базовую функциональность управления питанием и могут быть расширены специфичными возможностями.</p>
+<h3 id="_9">Интерфейсы<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p>Единый интерфейс <code>I_Control</code> позволяет управлять различными типами механизмов одинаково.</p>
+<h3 id="_10">Диагностика<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p>Механизмы с обратной связью автоматически контролируют корректность выполнения команд.</p>
+<hr/>
+<h2 id="_11">Связанные разделы<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<h3 id="_12">Базовые механизмы<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../mechanism/FB_AbstractMechanism/">FB_AbstractMechanism</a> - Абстрактный базовый класс</li>
+<li><a href="../../mechanism/FB_Mechanism/">FB_Mechanism</a> - Базовая реализация механизма  </li>
+<li><a href="../../mechanism/FB_MechanismWithFeedback/">FB_MechanismWithFeedback</a> - Механизм с диагностикой</li>
+</ul>
+<h3 id="_13">Управление<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../control/FB_BasicControl/">FB_BasicControl</a> - Базовое управление с условиями</li>
+<li><a href="../../control/FB_FrequencyControl/">FB_FrequencyControl</a> - Управление частотными преобразователями</li>
+</ul>
+<h3 id="_14">Сигналы для механизмов<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../../signal/discrete/FB_SignalWithFeedback/">FB_SignalWithFeedback</a> - Контроль обратной связи</li>
+<li><a href="../../signal/discrete/FB_SignalWithTrigger/">FB_SignalWithTrigger</a> - Детекция команд управления</li>
+</ul>
+<h3 id="_15">Другие диаграммы<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<ul>
+<li><a href="../signals-diagram/" target="_blank">Обработка сигналов</a></li>
+<li><a href="../communication-diagram/" target="_blank">Коммуникация</a></li>
+<li><a href="../../full-diagram/" target="_blank">Полная диаграмма</a></li>
+</ul>
+<h3 id="_16">Навигация<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<p><a href="../../diagram/">Обзор архитектуры</a> | <a href="../../">Главная</a></p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "navigation.path", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
+</html>
