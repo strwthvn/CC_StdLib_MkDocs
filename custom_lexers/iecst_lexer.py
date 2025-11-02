@@ -3,6 +3,7 @@ Pygments lexer for IEC 61131-3 Structured Text (ST)
 Supports syntax highlighting with GitHub Dark color scheme
 """
 
+import re
 from pygments.lexer import RegexLexer, bygroups, words, include
 from pygments.token import (
     Comment, Keyword, Name, Number, Operator, Punctuation,
@@ -23,8 +24,8 @@ class IECSTLexer(RegexLexer):
     filenames = ['*.st', '*.ST']
     mimetypes = ['text/x-iecst']
 
-    # Case-insensitive flags
-    flags = 0
+    # Enable multiline mode for proper $ handling
+    flags = re.MULTILINE
 
     # Control flow keywords
     CONTROL_KEYWORDS = [
@@ -115,7 +116,7 @@ class IECSTLexer(RegexLexer):
             # Multi-line comments with nesting support
             (r'\(\*', Comment.Multiline, 'comment'),
             # Single-line comments
-            (r'//.*?$', Comment.Single),
+            (r'//.*$', Comment.Single),
         ],
 
         'comment': [
