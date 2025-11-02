@@ -98,6 +98,11 @@ class IECSTLexer(RegexLexer):
 
     tokens = {
         'root': [
+            # Standard type declarations - must be before custom types (case-insensitive)
+            (r'(?i)(:\s*)(' + '|'.join(DATA_TYPES) + r')(?=\s|;|,|\))',
+             bygroups(Punctuation, Keyword.Type)),
+            # Custom type declarations (FB, structures, etc.) - must be before whitespace
+            (r'(:\s*)([A-Za-z_]\w*)', bygroups(Punctuation, Name.Class)),
             include('whitespace'),
             include('comments'),
             include('strings'),
@@ -186,10 +191,8 @@ class IECSTLexer(RegexLexer):
         'identifiers': [
             # System variables with %
             (r'%[A-Za-z_]\w*', Name.Builtin),
-            # Function/FB calls (identifier followed by parenthesis)
-            (r'([A-Za-z_]\w*)(\s*)(\()', bygroups(Name.Function, Whitespace, Punctuation)),
-            # Type identifiers (after colon in declarations)
-            (r':\s*([A-Za-z_]\w*)', bygroups(Name.Class)),
+            # Function/FB calls (identifier followed by parenthesis, but not after dot)
+            (r'(?<!\.)([A-Za-z_]\w*)(\s*)(\()', bygroups(Name.Function, Whitespace, Punctuation)),
             # Regular identifiers
             (r'[A-Za-z_]\w*', Name),
         ],
